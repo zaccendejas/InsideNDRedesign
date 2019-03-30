@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -9,13 +10,22 @@
 <body>
     <div id="banner"></div>
     <div id="main"></div>
-    <div id="favorites">
-        <p id="favorites-label">Favorites</p>
-        <ul class="favorites-list">
-            <li class="fav-li"><a class="fav-link" href="#"><img class="icon" src="images/ClassSearchIcon.png">Class Search</a><span class="fa fa-star star checked"></span></li>
-            <li class="fav-li"><a class="fav-link" href="#"><img class="icon" src="images/IrishPayIcon.png">IRISHPAY</a><span class="fa fa-star star checked"></span></li>
-            <li class="fav-li"><a class="fav-link" href="#"><img class="icon" src="images/UltraTimeIcon.png">UltraTime</a><span class="fa fa-star star checked"></span></li>
-        </ul>
+
+    <div id="left">
+        <div id="favorites">
+            <p class="left-label">Favorites</p>
+            <ul class="favorites-list">
+                <li class="fav-li"><a class="fav-link" href="#"><img class="appIcon" src="images/ClassSearchIcon.png">Class Search</a><button class="starButton"><span class="fa fa-star star checked"></span></button></li>
+                <li class="fav-li"><a class="fav-link" href="#"><img class="appIcon" src="images/IrishPayIcon.png">IRISHPAY</a><button class="starButton"><span class="fa fa-star star checked"></span></button></li>
+                <li class="fav-li"><a class="fav-link" href="#"><img class="appIcon" src="images/UltraTimeIcon.png">UltraTime</a><button class="starButton"><span class="fa fa-star star checked"></span></button></li>
+            </ul>
+        </div>
+        <div id="deleted">
+            <p class="left-label">Recently Deleted</p>
+            <ul class="favorites-list">
+                <li class="fav-li"><a class="fav-link" href="#"><img class="appIcon" src="images/NOVOIcon.png">NOVO</a><button class="starButton"><span class="fa fa-star-o star"></span></button></li>
+            </ul>
+        </div>
     </div>
 </body>
 

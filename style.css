@@ -3,14 +3,15 @@
     src: url(fonts/Galaxie%20Polaris%20Medium.otf);
 }
 
-#favorites {
+#left {
     margin-top: 10px;
     margin-left: 0px;
-    padding-left: 10px;
-    /*    font-family: "Galaxie Polaris", Arial, sans-serif;*/
-    font-family: "Galaxie Polaris";
-    font-size: 24px;
-    width: 200px;
+    padding-left: 1%;
+    padding-top: 1%;
+    font-family: "Galaxie Polaris", Arial, sans-serif;
+    font-size: 25px;
+    min-width: 250px;
+    width: 20%;
     border-style: hidden solid hidden hidden;
     border-width: thin;
     position: -webkit-sticky;
@@ -23,15 +24,16 @@
     color: #555;
 }
 
+
 #banner {
     height: 100px;
     background-color: #0C2340;
 }
 
-.icon {
+.appIcon {
     width: 40px;
     height: 40px;
-    padding-right: 10px;
+    margin-right: 10px;
     vertical-align: middle;
 }
 
@@ -39,6 +41,9 @@
     list-style: none;
     margin: 0;
     padding: 0;
+    height: 350px;
+    overflow: auto;
+    vertical-align: middle;
 }
 
 .fav-li {
@@ -46,9 +51,9 @@
 }
 
 .fav-link {
-    text-decoration: none;
+    text-decoration: none !important;
     font-family: inherit;
-    font-size: 16px;
+    font-size: 20px;
     color: #555;
 }
 
@@ -57,8 +62,20 @@
 }
 
 .star {
+    /*
     float: right;
     margin-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+*/
+}
+
+.starButton {
+    background-color: white;
+    border: none;
+    float: right;
+    padding: 0px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
