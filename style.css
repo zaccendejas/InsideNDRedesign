@@ -47,7 +47,17 @@
 }
 
 .fav-li {
-    margin: 10px 0;
+    /*    margin: 10px 0;*/
+}
+
+.favCard {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.favCard:hover {
+    background-color: #E8E8E8;
+    color: black;
 }
 
 .fav-link {
@@ -71,11 +81,10 @@
 }
 
 .starButton {
-    background-color: white;
+    background-color: inherit;
     border: none;
     float: right;
     padding: 0px;
-    margin-right: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
