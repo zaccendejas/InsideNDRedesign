@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "Galaxie Polaris";
+    src: url(fonts/Galaxie%20Polaris%20Medium.otf);
+}
+
+#favorites {
+    margin-top: 10px;
+    margin-left: 0px;
+    padding-left: 10px;
+    /*    font-family: "Galaxie Polaris", Arial, sans-serif;*/
+    font-family: "Galaxie Polaris";
+    font-size: 24px;
+    width: 200px;
+    border-style: hidden solid hidden hidden;
+    border-width: thin;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0px;
+    top: 100px;
+    position: absolute;
+    font-weight: 400;
+    line-height: 26.4px;
+    color: #555;
+}
+
+#banner {
+    height: 100px;
+    background-color: #0C2340;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+.favorites-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fav-li {
+    margin: 10px 0;
+}
+
+.fav-link {
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: #555;
+}
+
+.checked {
+    color: #D39F10;
+}
+
+.star {
+    float: right;
+    margin-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
