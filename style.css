@@ -3,14 +3,15 @@
     src: url(fonts/Galaxie%20Polaris%20Medium.otf);
 }
 
-#favorites {
+#left {
     margin-top: 10px;
     margin-left: 0px;
-    padding-left: 10px;
-    /*    font-family: "Galaxie Polaris", Arial, sans-serif;*/
-    font-family: "Galaxie Polaris";
-    font-size: 24px;
-    width: 200px;
+    padding-left: 1%;
+    padding-top: 1%;
+    font-family: "Galaxie Polaris", Arial, sans-serif;
+    font-size: 20.25px;
+    min-width: 250px;
+    max-width: 20%;
     border-style: hidden solid hidden hidden;
     border-width: thin;
     position: -webkit-sticky;
@@ -20,7 +21,7 @@
     position: absolute;
     font-weight: 400;
     line-height: 26.4px;
-    color: #555;
+    color: black;
 }
 
 #main{
@@ -111,28 +112,63 @@
     padding-top: 2px;
 }
 
-.icon {
+.appIcon {
     width: 40px;
     height: 40px;
-    padding-right: 10px;
+    margin-right: 10px;
     vertical-align: middle;
 }
 
-.favorites-list {
+#currentFavs {
     list-style: none;
     margin: 0;
     padding: 0;
+    height: 350px;
+    overflow: auto;
+    vertical-align: middle;
 }
 
-.fav-li {
-    margin: 10px 0;
+#deletedList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    overflow: auto;
+    vertical-align: middle;
 }
 
-.fav-link {
-    text-decoration: none;
+.favCard {
+    padding: 10px;
+    margin-right: 10px;
+    overflow: auto;
+    height: 60px;
+}
+
+.favName {
+    width: 150px;
+    height: 40px;
+}
+
+.favCard:hover {
+    background-color: #E8E8E8;
+    color: #303030;
+}
+
+.favli {
+    display: inline-block;
+    width: 200px;
+}
+
+.favLink {
+    text-decoration: none !important;
     font-family: inherit;
-    font-size: 16px;
-    color: #555;
+    font-size: 18px;
+    color: black;
+}
+
+.favLink:hover {
+    color: #303030;
+    cursor: pointer;
 }
 
 .checked {
@@ -140,8 +176,29 @@
 }
 
 .star {
+    /*
     float: right;
     margin-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+*/
+}
+
+.starButton {
+    background-color: inherit;
+    border: none;
+    float: right;
+    padding: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /*    transition: all .1s ease-in-out;*/
+}
+
+.starButton:hover {
+    /*    transform: scale(1.1);*/
+}
+
+span.liStar {
+    display: inline-block;
+    float: right;
 }
