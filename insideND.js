@@ -1,41 +1,30 @@
-//$(document).ready(function () {
-//    $("#UTButton").click(function () {
-//        if ($("#UTButton span").hasClass("checked")) {
-//            console.log('unfavorite');
-//            if ($("#NOVOCard").length) {
-//                console.log('NOVO exists');
-//                $("#NOVOCard").replaceWith($("#UTCard"));
-//            } else {
-//                console.log('NOVO is gone');
-//                $("#deletedList").append($("#UTCard"));
-//            }
-//            $("#UTButton span").addClass('fa-star-o').removeClass('fa-star checked');
-//        } else {
-//            console.log('favorite');
-//            $("#currentFavs").append($("#UTCard"));
-//            $("#UTButton span").addClass('fa-star checked').removeClass('fa-star-o');
-//        }
-//    });
-//});
-
 $(document).ready(function () {
     $(".starButton").click(function () {
-        cardElement = $(this).parent().parent().parent();
+        cardElement = $(this).parent().parent();
         if ($(this).find('span').hasClass("checked")) {
             console.log('unfavorite');
-            console.log($("#deletedList").children().length);
             if ($("#deletedList").children().length) {
                 console.log('replace');
-                $("#deletedList > a").replaceWith(cardElement);
+                cardElement.fadeOut("slow", function () {
+                    $("#deletedList > .favCard").hide();
+                    $("#deletedList > .favCard").replaceWith(cardElement);
+                    cardElement.fadeIn("slow");
+                });
             } else {
-                console.log('empty deleted list');
-                $("#deletedList").append(cardElement);
+                console.log('deleted is empty');
+                cardElement.fadeOut("slow", function () {
+                    $("#deletedList").append(cardElement);
+                    cardElement.fadeIn("slow");
+                })
             }
             $(this).find('span').addClass('fa-star-o').removeClass('fa-star checked');
         } else {
             console.log('favorite');
-            $("#currentFavs").append(cardElement);
-            $(this).find('span').addClass('fa-star checked').removeClass('fa-star-o');
+            cardElement.hide("slow", function () {
+                $("#currentFavs").append(cardElement);
+                $(this).find('.starButton span').removeClass('fa-star-o').addClass('fa-star checked');
+                cardElement.fadeIn("slow");
+            });
         }
     });
 });

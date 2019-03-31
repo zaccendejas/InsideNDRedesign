@@ -11,7 +11,7 @@
     font-family: "Galaxie Polaris", Arial, sans-serif;
     font-size: 20.25px;
     min-width: 250px;
-    width: 20%;
+    max-width: 20%;
     border-style: hidden solid hidden hidden;
     border-width: thin;
     position: -webkit-sticky;
@@ -72,6 +72,11 @@
     color: #303030;
 }
 
+.favli {
+    display: inline-block;
+    width: 200px;
+}
+
 .favLink {
     text-decoration: none !important;
     font-family: inherit;
@@ -81,6 +86,7 @@
 
 .favLink:hover {
     color: #303030;
+    cursor: pointer;
 }
 
 .checked {
@@ -103,4 +109,14 @@
     padding: 0px;
     margin-top: 5px;
     margin-bottom: 5px;
+    /*    transition: all .1s ease-in-out;*/
+}
+
+.starButton:hover {
+    /*    transform: scale(1.1);*/
+}
+
+span.liStar {
+    display: inline-block;
+    float: right;
 }
