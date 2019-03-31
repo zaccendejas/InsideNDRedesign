@@ -3,8 +3,10 @@
 
 <head>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="insideND.js"></script>
 </head>
 
 <body>
@@ -13,32 +15,41 @@
 
     <div id="left">
         <div id="favorites">
-            <p class="left-label">Favorites</p>
-            <ul class="favorites-list">
-                <a class="fav-link" href="#">
+            <p class="leftLabel">Favorites</p>
+            <ul id="currentFavs">
+                <a class="favLink" href="#">
                     <div class="favCard">
-                        <li class="fav-li"><img class="appIcon" src="images/ClassSearchIcon.png">Class Search<button class="starButton"><span class="fa fa-star star checked"></span></button></li>
+                        <li class="favli"><img class="appIcon" src="images/ClassSearchIcon.png"><span class="favName">Class Search</span><button class="starButton"><span class="fa fa-star star checked"></span></button></li>
                     </div>
                 </a>
-                <a class="fav-link" href="#">
+                <a class="favLink" href="#">
                     <div class="favCard">
-                        <li class="fav-li"><img class="appIcon" src="images/IrishPayIcon.png">IRISHPAY<button class="starButton"><span class="fa fa-star star checked"></span></button>
+                        <li class="favli"><img class="appIcon" src="images/IrishPayIcon.png"><span class="favName">IRISHPAY</span><button class="starButton"><span class="fa fa-star star checked"></span></button>
                         </li>
                     </div>
                 </a>
-                <a class="fav-link" href="#">
+                <a class="favLink" id="UTCard" href="#">
                     <div class="favCard">
-                        <li class="fav-li"><img class="appIcon" src="images/UltraTimeIcon.png">UltraTime<button class="starButton"><span class="fa fa-star star checked"></span></button></li>
+                        <li class="favli"><img class="appIcon" src="images/UltraTimeIcon.png"><span class="favName">UltraTime</span><button class="starButton" id="UTButton"><span class="fa fa-star star checked"></span></button></li>
                     </div>
                 </a>
+                <!--
+                <a class="fav-link" href="#">
+                    <div class="favCard">
+                        <li class="fav-li"><img class="appIcon" src="images/UltraTimeIcon.png">
+                            <span class="favName">Graduation Progress System</span><button class="starButton"><span class="fa fa-star star checked"></span></button>
+                        </li>
+                    </div>
+                </a>
+-->
             </ul>
         </div>
         <div id="deleted">
-            <p class="left-label">Recently Deleted</p>
-            <ul class="favorites-list">
-                <a class="fav-link" href="#">
+            <p class="leftLabel">Recently Deleted</p>
+            <ul id="deletedList">
+                <a class="favLink" id="NOVOCard" href="#">
                     <div class="favCard">
-                        <li class="fav-li"><img class="appIcon" src="images/NOVOIcon.png">NOVO<button class="starButton"><span class="fa fa-star-o star"></span></button></li>
+                        <li class="favli"><img class="appIcon" src="images/NOVOIcon.png"><span class="favName">NOVO</span><button class="starButton"><span class="fa fa-star-o star"></span></button></li>
                     </div>
                 </a>
             </ul>

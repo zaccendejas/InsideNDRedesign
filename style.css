@@ -9,7 +9,7 @@
     padding-left: 1%;
     padding-top: 1%;
     font-family: "Galaxie Polaris", Arial, sans-serif;
-    font-size: 25px;
+    font-size: 20.25px;
     min-width: 250px;
     width: 20%;
     border-style: hidden solid hidden hidden;
@@ -21,7 +21,7 @@
     position: absolute;
     font-weight: 400;
     line-height: 26.4px;
-    color: #555;
+    color: black;
 }
 
 
@@ -37,7 +37,7 @@
     vertical-align: middle;
 }
 
-.favorites-list {
+#currentFavs {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -46,25 +46,41 @@
     vertical-align: middle;
 }
 
-.fav-li {
-    /*    margin: 10px 0;*/
+#deletedList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    overflow: auto;
+    vertical-align: middle;
 }
 
 .favCard {
     padding: 10px;
     margin-right: 10px;
+    overflow: auto;
+    height: 60px;
+}
+
+.favName {
+    width: 150px;
+    height: 40px;
 }
 
 .favCard:hover {
     background-color: #E8E8E8;
+    color: #303030;
+}
+
+.favLink {
+    text-decoration: none !important;
+    font-family: inherit;
+    font-size: 18px;
     color: black;
 }
 
-.fav-link {
-    text-decoration: none !important;
-    font-family: inherit;
-    font-size: 20px;
-    color: #555;
+.favLink:hover {
+    color: #303030;
 }
 
 .checked {
