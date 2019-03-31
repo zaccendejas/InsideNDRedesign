@@ -4,23 +4,27 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="insideND.js"></script>
 </head>
 
 <body>
     <div id="banner">
-        <img class="logo" src="images/logo.png" alt="InsideND">
+        <!--        <img class="logo" src="images/logo.png" alt="InsideND">-->
+        <div id="logo">InsideND</div>
         <input type="text" placeholder="Search...">
         <button type="submit"><i class="fas fa-search"></i></button>
     </div>
     <div id="menu">
         <div class="dropdown">
-          <button class="dropbtn"><span class="fas fa-book"></span> Academics</button>
-          <div class="dropdown-content">
-            <a href="#"><i class="fas fa-child"></i> First Year of Studies</a>
-            <a href="#"><i class="fas fa-book-reader"></i> Hesburgh Libraries</a>
-            <a href="#"><i class="fas fa-university"></i> Colleges</a>
-          </div>
+            <button class="dropbtn"><span class="fas fa-book"></span> Academics</button>
+            <div class="dropdown-content">
+                <a href="#"><i class="fas fa-child"></i> First Year of Studies</a>
+                <a href="#"><i class="fas fa-book-reader"></i> Hesburgh Libraries</a>
+                <a href="#"><i class="fas fa-university"></i> Colleges</a>
+            </div>
         </div>
         <div class="dropdown">
             <button class="dropbtn"><i class="fas fa-seedling"></i> Student Life</button>
@@ -42,14 +46,83 @@
     </div>
     <div id="main">
         <h2 id="navigation"><i class="fas fa-home"></i> <i class="fas fa-angle-right"></i></h2>
-</div>
-    <div id="favorites">
-        <p id="favorites-label">Favorites</p>
-        <ul class="favorites-list">
-            <li class="fav-li"><a class="fav-link" href="#"><img class="icon" src="images/ClassSearchIcon.png">Class Search</a><span class="fa fa-star star checked"></span></li>
-            <li class="fav-li"><a class="fav-link" href="#"><img class="icon" src="images/IrishPayIcon.png">IRISHPAY</a><span class="fa fa-star star checked"></span></li>
-            <li class="fav-li"><a class="fav-link" href="#"><img class="icon" src="images/UltraTimeIcon.png">UltraTime</a><span class="fa fa-star star checked"></span></li>
-        </ul>
+    </div>
+    <div id="left">
+        <div id="favorites">
+            <div class="leftLabel">
+                Favorites
+            </div>
+            <ul id="currentFavs">
+                <div class="favCard">
+                    <a class="favLink" href="https://cse.nd.edu" target="_blank">
+                        <li class="favli">
+                            <img class="appIcon" src="images/ClassSearchIcon.png">
+                            <span class="favName" style="height: 60px;">Class Search</span>
+                        </li>
+                    </a>
+                    <span class="liStar">
+                        <button class="starButton">
+                            <span class="fa fa-star star checked"></span>
+                        </button>
+                    </span>
+                </div>
+                <div class="favCard">
+                    <a class="favLink" href="https://cse.nd.edu" target="_blank">
+                        <li class="favli">
+                            <img class="appIcon" src="images/IrishPayIcon.png">
+                            <span class="favName">IRISHPAY</span>
+                        </li>
+                    </a>
+                    <span class="liStar">
+                        <button class="starButton">
+                            <span class="fa fa-star star checked"></span>
+                        </button>
+                    </span>
+                </div>
+                <div class="favCard">
+                    <a class="favLink" href="https://cse.nd.edu" target="_blank" id="UTCard">
+                        <li class="favli">
+                            <img class="appIcon" src="images/UltraTimeIcon.png">
+                            <span class="favName">UltraTime</span>
+                        </li>
+                    </a>
+                    <span class="liStar">
+                        <button class="starButton" id="UTButton">
+                            <span class="fa fa-star star checked"></span>
+                        </button>
+                    </span>
+                </div>
+                <!--
+                <a class="fav-link" href="#">
+                    <div class="favCard">
+                        <li class="fav-li"><img class="appIcon" src="images/UltraTimeIcon.png">
+                            <span class="favName">Graduation Progress System</span><button class="starButton"><span class="fa fa-star star checked"></span></button>
+                        </li>
+                    </div>
+                </a>
+-->
+            </ul>
+        </div>
+        <div id="deleted">
+            <div class="leftLabel">
+                Recently Deleted
+            </div>
+            <ul id="deletedList">
+                <div class="favCard">
+                    <a class="favLink" href="https://cse.nd.edu" target="_blank">
+                        <li class="favli">
+                            <img class="appIcon" src="images/NOVOIcon.png">
+                            <span class="favName">NOVO</span>
+                        </li>
+                    </a>
+                    <span class="liStar">
+                        <button class="starButton">
+                            <span class="fa fa-star-o star"></span>
+                        </button>
+                    </span>
+                </div>
+            </ul>
+        </div>
     </div>
 </body>
 
