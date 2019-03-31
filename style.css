@@ -244,3 +244,77 @@ body {
 #favorites {
     height: 65%;
 }
+.body-label{
+	font-size: 18px;
+}
+.body-box{
+	overflow: scroll;
+	height: 60vh;
+	border-style: solid;
+}
+.body-rect{
+	margin: 15px;
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+	height: 93px;
+}
+.body-rect:hover{
+	background-color: #E8E8E8;
+    color: black;
+}
+.bodyImg{
+	margin:0px;
+	padding:0px;
+}
+.title{
+	font-size: 16px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	line-height: 20px;
+	margin-top: 5px;
+}
+.description{
+	font-size: 14.22px;
+	line-height: 16px;
+	margin-bottom: 0;
+}
+.star_body {
+    float: right;
+    padding-top: 7px;
+	font-size: 20px;
+}
+.descriptionBtn{
+	height: 93px;
+	width: 23px;
+	background-color: grey;
+	border-radius: 0 !important;
+	text-align: center;
+}
+.tabBTN{
+	margin-top: 15px;
+}
+
+.announcements{
+	margin: 15px;
+	margin-right: 0px !important;
+	margin-left: 0px !important;
+	/* height: 93px; */
+
+}
+.titleAnnounce{
+	margin-bottom: 0px;
+	font-size: 16px;
+	width: 100%;
+	text-align: center;
+	background-color: #0C2340;
+	color: white;
+}
+.contentAnnounce{
+	padding: 5px;
+	font-size: 14.22px
+}
+.subsection{
+	font-size: 20px;
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
