@@ -17,15 +17,16 @@
 <body>
     <div id="banner">
         <!--        <img class="logo" src="images/logo.png" alt="InsideND">-->
-        <div id="logo">InsideND</div>
+        <div id="logo"><a id="logoTxt" href="index.html">InsideND</a></div>
         <input type="text" placeholder="Search...">
-        <button type="submit"><i class="fas fa-search"></i></button>
+        <a href="jobSearch.html"> <button type="submit"><i class="fas fa-search"></i></button></a>
         <button id="signout" type="submit">Sign Out</button>
     </div>
     <div id="menu">
         <div class="dropdown">
             <button class="dropbtn" id="selectedTab"><span class="fas fa-book"></span> Academics</button>
             <div class="dropdown-content">
+                <a href="#"><i class="fas fa-apple-alt"></i> Courses and Grades</a>
                 <a href="#"><i class="fas fa-child"></i> First Year of Studies</a>
                 <a href="#"><i class="fas fa-book-reader"></i> Hesburgh Libraries</a>
                 <a href="#"><i class="fas fa-university"></i> Colleges</a>
@@ -50,7 +51,7 @@
         </div>
     </div>
     <div id="nav-house">
-        <h4 id="navigation"><i class="fas fa-home"></i> <i class="fas fa-angle-right"></i><span class="subsection"> Academics</span></h4>
+        <h4 id="navigation"><a id="homeButton" href="index.html"><i class="fas fa-home"></i></a> <i class="fas fa-angle-right"></i><span class="subsection"> Academics</span></h4>
 
     </div>
     <div id="main">
@@ -254,7 +255,9 @@
                 </div>
             </div>
             <div id="FirstYear">
-                <p class="subsection border-bottom">First Year of Studies</p>
+                <a name="FirstYear">
+                    <p class="subsection border-bottom">First Year of Studies</p>
+                </a>
                 <div class="row">
                     <div class="col-4">
                         <div class="row">

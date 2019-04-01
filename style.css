@@ -125,6 +125,16 @@
     max-width: 320px;
     height: 95px;
     padding-top: 2px;
+    text-decoration: none;
+}
+#logoTxt{
+    color: white;
+    text-decoration: none;
+}
+
+#homeButton{
+    color: #0C2340 !important;
+    text-decoration: none;
 }
 
 .appIcon {
@@ -348,5 +358,5 @@ body {
 }
 
 #selectedTab {
-    background-color: #f1f1f1
+    background-color: #a67d0c
 }
