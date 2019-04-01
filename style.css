@@ -346,3 +346,7 @@ body {
 #signout {
     margin-left: 200px;
 }
+
+#selectedTab {
+    background-color: #f1f1f1
+}
