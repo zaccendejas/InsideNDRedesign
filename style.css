@@ -1,0 +1,377 @@
+@font-face {
+    font-family: "Galaxie Polaris";
+    src: url(fonts/Galaxie%20Polaris%20Medium.otf);
+}
+
+#left {
+    margin-top: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    font-family: "Galaxie Polaris", Arial, sans-serif;
+    font-size: 20.25px;
+    width: 246px;
+    /*    max-width: 20%;*/
+    border-style: hidden solid hidden hidden;
+    border-width: thin;
+    position: -webkit-sticky;
+    position: fixed;
+    bottom: 0px;
+    top: 100px;
+    font-weight: 400;
+    line-height: 26.4px;
+    color: black;
+    background-color: gainsboro;
+}
+
+#main {
+    position: absolute;
+    top: 190px;
+    margin-top: 10px;
+    left: 260px;
+    z-index: -2;
+}
+
+#nav-house {
+    position: fixed;
+    top: 160px;
+    left: 260px;
+    padding-top: 10px;
+    z-index: -1;
+    background-color: white;
+    width: 100%;
+}
+
+#banner {
+    position: fixed;
+    height: 100px;
+    background-color: #0C2340;
+    margin: auto;
+    width: 100%;
+}
+
+#banner input[type=text] {
+    position: relative;
+    left: 100px;
+    top: 0px;
+    bottom: 0px;
+    font-size: 18px;
+    width: 50%;
+}
+
+#banner button {
+    position: relative;
+    left: 90px;
+    bottom: 0px;
+    font-size: 18px;
+    top: 0px;
+}
+
+#menu {
+    position: fixed;
+    top: 100px;
+    left: 240px;
+    background-color: #D39F10;
+    width: 100%;
+    margin: auto;
+}
+
+
+
+.dropbtn {
+    background-color: #D39F10;
+    color: white;
+    padding: 16px 25px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #a67d0c;
+}
+
+.logo {
+    width: 25%;
+    max-width: 320px;
+    height: 95px;
+    padding-top: 2px;
+    text-decoration: none;
+}
+
+#logoTxt {
+    color: white;
+    text-decoration: none;
+}
+
+#homeButton {
+    color: #0C2340 !important;
+    text-decoration: none;
+}
+
+#homeButton:hover {
+    cursor: pointer;
+}
+
+.appIcon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+#currentFavs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 350px;
+    overflow: auto;
+    vertical-align: middle;
+}
+
+#deletedList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    overflow: auto;
+    vertical-align: middle;
+}
+
+.favCard {
+    padding: 10px;
+    margin-right: 0px;
+    overflow: auto;
+    height: 60px;
+}
+
+.favName {
+    width: 150px;
+    height: 40px;
+}
+
+.favCard:hover {
+    background-color: #E8E8E8;
+    color: #303030;
+}
+
+.favli {
+    display: inline-block;
+    width: 185px;
+    height: 40px;
+}
+
+.favLink {
+    text-decoration: none !important;
+    font-family: inherit;
+    font-size: 18px;
+    color: black;
+}
+
+.favLink:hover {
+    color: #303030;
+    cursor: pointer;
+}
+
+.checked {
+    color: #D39F10;
+}
+
+.star {
+    /*
+    float: right;
+    margin-right: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+*/
+}
+
+.starButton {
+    background-color: inherit;
+    border: none;
+    float: right;
+    padding: 0px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    /*    transition: all .1s ease-in-out;*/
+}
+
+.starButton:hover {
+    cursor: pointer;
+    /*    transform: scale(1.1);*/
+}
+
+span.liStar {
+    display: inline-block;
+    float: right;
+    height: 40px;
+}
+
+#logo {
+    color: white;
+    font-size: 36.5px;
+    font-weight: bold;
+    font-family: inherit;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+body {
+    font-family: "Galaxie Polaris", Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.leftLabel {
+    padding-top: 13px;
+    padding-left: 13px;
+    padding-bottom: 14px;
+    /*    text-decoration: underline;*/
+    /*
+    border-style: hidden hidden solid hidden;
+    border-width: thin;
+*/
+    /*    background-color: darkgray;*/
+}
+
+#favorites {
+    height: 65%;
+}
+
+.body-label {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.body-box {
+    /*    overflow: scroll;*/
+    /*    height: 60vh;*/
+    border-style: solid;
+}
+
+.body-rect {
+    margin: 15px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    height: 93px;
+}
+
+.body-rect:hover {
+    background-color: #E8E8E8;
+    color: black;
+    cursor: pointer;
+}
+
+.bodyImg {
+    margin: 0px;
+    padding: 0px;
+}
+
+.title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    line-height: 20px;
+    margin-top: 5px;
+}
+
+.description {
+    font-size: 14.22px;
+    line-height: 16px;
+    margin-bottom: 0;
+}
+
+.star_body {
+    float: right;
+    padding-top: 7px;
+    font-size: 18px;
+}
+
+.descriptionBtn {
+    height: 93px;
+    width: 23px;
+    background-color: grey;
+    border-radius: 0 !important;
+    text-align: center;
+}
+
+.tabBTN {
+    margin-top: 15px;
+}
+
+.announcements {
+    margin: 15px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    /* height: 93px; */
+
+}
+
+.titleAnnounce {
+    margin-bottom: 0px;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    background-color: #0C2340;
+    color: white;
+}
+
+.contentAnnounce {
+    padding: 5px;
+    font-size: 14.22px
+}
+
+.subsection {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+#signout {
+    margin-left: 200px;
+}
+
+.selectedTab {
+    background-color: #a67d0c;
+}
+
+#LibraryTab:hover {
+    cursor: pointer;
+}
+
+.cardLink {
+    text-decoration: none !important;
+    color: black !important;
+}

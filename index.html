@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<!--    <script src="scripts/main.js"></script>-->
+    <script src="insideND.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div id="banner">
+        <!--        <img class="logo" src="images/logo.png" alt="InsideND">-->
+        <div id="logo"><a id="logoTxt" href="index.html">InsideND</a></div>
+        <input type="text" placeholder="Search...">
+        <a onclick="goToSearch();"><button type="submit"><i class="fas fa-search"></i></button></a>
+        <!--        <a href="jobSearch.html"><button type="submit"><i class="fas fa-search"></i></button></a>-->
+        <button id="signout" type="submit">Sign Out</button>
+    </div>
+    <div id="menu">
+        <div class="dropdown">
+            <a onclick="goToAcademics('#');"><button class="dropbtn" id="academics"><span class="fas fa-book"></span> Academics</button></a>
+            <!--            <a href="category.html"><button class="dropbtn"><span class="fas fa-book"></span> Academics</button></a>-->
+            <div class="dropdown-content">
+                <a href="#"><i class="fas fa-apple-alt"></i> Courses and Grades</a>
+                <a href="#FirstYear"><i class="fas fa-child"></i> First Year of Studies</a>
+                <a onclick="goToAcademics('#Library');" id="LibraryTab"><i class="fas fa-book-reader"></i> Hesburgh Libraries</a>
+                <a href="#"><i class="fas fa-university"></i> Colleges</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fas fa-seedling"></i> Student Life</button>
+            <div class="dropdown-content">
+                <a href="#"><i class="fas fa-city"></i> Campus Life</a>
+                <a href="#"><i class="far fa-life-ring"></i> Campus Safety</a>
+                <a href="#"><i class="fas fa-concierge-bell"></i> Campus Services</a>
+                <a href="#"><i class="fas fa-laptop-medical"></i> IT Services</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fas fa-balance-scale"></i> Administrative</button>
+            <div class="dropdown-content">
+                <a href="#"><i class="fas fa-money-bill-wave"></i> Payroll Services</a>
+                <a href="#"><i class="fas fa-chalkboard-teacher"></i> Human Resources</a>
+                <a href="#"><i class="far fa-newspaper"></i> News and Information</a>
+            </div>
+        </div>
+    </div>
+    <div id="nav-house">
+        <h4 id="navigation"><a id="homeButton" onclick="goToHome();"><i class="fas fa-home"></i></a> <i class="fas fa-angle-right"></i></h4>
+        <!--        <h4 id="navigation"><a id="homeButton" href="index.html"><i class="fas fa-home"></i></a> <i class="fas fa-angle-right"></i></h4>-->
+    </div>
+    <div id="main">
+        <div class="container" id="body">
+            <!--
+            <div class="row">
+                <div class="col">
+                    <p class="body-label">Seasonal:</p>
+                    <div class="body-box">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col pr-0">
+                                    <div class="row border body-rect">
+                                        <div class="col-auto p-0"><img class="bodyImg" src="images/ClassSearchIcon.png"></div>
+                                        <div class="col pr-2">
+                                            <span class="fa fa-star star_body checked"></span>
+                                            <p class="title">Class Search</p>
+                                            <p class="description">Filter classes by campus, department, and credits.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto tabBTN pl-0">
+                                    <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="Search for classes by filtering by semester, campus, attribute, and credits. This results in a list of classes showing their time, place, professors, and number of seats taken."><span class="fa fa-2x fa-angle-right"></span></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pr-0">
+                                    <div class="row border body-rect">
+                                        <div class="col-auto p-0"><img src="images/DART.png"></div>
+                                        <div class="col pr-2">
+                                            <span class="far fa-star star_body checked"></span>
+                                            <p class="title">DART Registration</p>
+                                            <p class="description">View registration status and register for classes.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto tabBTN pl-0">
+                                    <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="DART allows you to register for classes, add and drop classes, view holds which effect registration ability, and view your course schedule in both a detailed list and a weekly view."><span class="fa fa-2x fa-angle-right"></span></button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col pr-0">
+                                    <div class="row border body-rect">
+                                        <div class="col-auto p-0"><img src="images/GPS.png"></div>
+                                        <div class="col pr-2">
+                                            <span class="far fa-star star_body checked"></span>
+                                            <p class="title">Graduation Progress System</p>
+                                            <p class="description">Monitor requirements for graduation.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto tabBTN pl-0">
+                                    <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="And here's some amazing content. It's very engaging. Right?"><span class="fa fa-2x fa-angle-right"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <p class="body-label">Announcements:</p>
+                    <div class="body-box">
+                        <div class="container">
+                            <div class="row border announcements">
+                                <p class="titleAnnounce">Hesburgh Sidewalk Closure</p>
+                                <p class="contentAnnounce">The sidewalks on the northeast side of the library will be closed April 11-13th. Please avoid this area by walking around the south side of the library. </p>
+                            </div>
+                            <div class="row border announcements">
+                                <p class="titleAnnounce">Earth Hour</p>
+                                <p class="contentAnnounce">The university will join others across the globe by turning off the lights shining on the dome and the library for one hour at 8:30 pm on April 11, 2019. Please join us in being environmentally friendly. Reduce. Reuse. Recycle. </p>
+                            </div>
+                            <div class="row border announcements">
+                                <p class="titleAnnounce">The Bald and The Beautiful</p>
+                                <p class="contentAnnounce">The annual event will take place April 3-5th on the Hagerty stage in the Duncan Student Center. The event benefits St. Baldrick's, Beacon Memorial Children's Hospital, and Children with Hair Loss. You can shave your head, donate 8" of hair, or purchase colorful extensions.</p>
+                            </div>
+                            <div class="row border announcements">
+                                <p class="titleAnnounce">Giving Day</p>
+                                <p class="contentAnnounce">Notre Dame's annual giving day will be on April 25, 2019. Please consider donating to organizations who have positively contributed to your experience at Notre Dame.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+-->
+        </div>
+    </div>
+    <div id="left">
+        <div id="favorites">
+            <div class="leftLabel">
+                Favorites
+            </div>
+            <ul id="currentFavs">
+                <div class="favCard">
+                    <a class="favLink" href="https://inside.nd.edu/launch-task/all/classsearch" target="_blank">
+                        <li class="favli">
+                            <img class="appIcon" src="images/ClassSearchIcon.png">
+                            <span class="favName" style="height: 60px;">Class Search</span>
+                        </li>
+                    </a>
+                    <span class="liStar">
+                        <button class="starButton">
+                            <span class="fa fa-star star checked"></span>
+                        </button>
+                    </span>
+                </div>
+                <div class="favCard">
+                    <a class="favLink" href="https://cse.nd.edu" target="_blank">
+                        <li class="favli">
+                            <img class="appIcon" src="images/IrishPayIcon.png">
+                            <span class="favName">IRISHPAY</span>
+                        </li>
+                    </a>
+                    <span class="liStar">
+                        <button class="starButton">
+                            <span class="fa fa-star star checked"></span>
+                        </button>
+                    </span>
+                </div>
+                <div class="favCard">
+                    <a class="favLink" href="https://cse.nd.edu" target="_blank" id="UTCard">
+                        <li class="favli">
+                            <img class="appIcon" src="images/UltraTimeIcon.png">
+                            <span class="favName">UltraTime</span>
+                        </li>
+                    </a>
+                    <span class="liStar">
+                        <button class="starButton" id="UTButton">
+                            <span class="fa fa-star star checked"></span>
+                        </button>
+                    </span>
+                </div>
+                <!--
+                <a class="fav-link" href="#">
+                    <div class="favCard">
+                        <li class="fav-li"><img class="appIcon" src="images/UltraTimeIcon.png">
+                            <span class="favName">Graduation Progress System</span><button class="starButton"><span class="fa fa-star star checked"></span></button>
+                        </li>
+                    </div>
+                </a>
+-->
+            </ul>
+        </div>
+        <div id="deleted">
+            <div class="leftLabel">
+                Recently Deleted
+            </div>
+            <ul id="deletedList">
+                <div class="favCard">
+                    <a class="favLink" href="https://cse.nd.edu" target="_blank">
+                        <li class="favli">
+                            <img class="appIcon" src="images/NOVOIcon.png">
+                            <span class="favName">NOVO</span>
+                        </li>
+                    </a>
+                    <span class="liStar">
+                        <button class="starButton">
+                            <span class="far fa-star star checked"></span>
+                        </button>
+                    </span>
+                </div>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
