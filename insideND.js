@@ -29,12 +29,21 @@ $(document).ready(function () {
             });
         }
     });
-    $("#body").load("index-body.html");
+    $("#body").load("index-body.html", function () {
+        $("[data-toggle=popover]").popover();
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        });
+    });
 });
 
 function goToAcademics(anchor) {
     $("#body").load("academics-body.html", function () {
         location.href = anchor;
+        $("[data-toggle=popover]").popover();
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        });
     });
     $("#navigation > .subsection").remove();
     $("#navigation").append('<span class="subsection"> Academics</span>');
@@ -42,7 +51,12 @@ function goToAcademics(anchor) {
 }
 
 function goToSearch() {
-    $("#body").load("search-body.html");
+    $("#body").load("search-body.html", function () {
+        $("[data-toggle=popover]").popover();
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        });
+    });
     $("#navigation > .subsection").remove();
     $("#navigation").append('<span class="subsection"> "job"</span>');
     $("#academics").removeClass('selectedTab');
@@ -51,6 +65,10 @@ function goToSearch() {
 function goToHome() {
     $("#body").load("index-body.html", function () {
         location.href = '#';
+        $("[data-toggle=popover]").popover();
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        });
     });
     $("#navigation > .subsection").remove();
     $("#academics").removeClass('selectedTab');
