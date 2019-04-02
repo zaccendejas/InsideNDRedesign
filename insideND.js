@@ -29,4 +29,29 @@ $(document).ready(function () {
             });
         }
     });
+    $("#body").load("index-body.html");
 });
+
+function goToAcademics(anchor) {
+    $("#body").load("academics-body.html", function () {
+        location.href = anchor;
+    });
+    $("#navigation > .subsection").remove();
+    $("#navigation").append('<span class="subsection"> Academics</span>');
+    $("#academics").addClass('selectedTab');
+}
+
+function goToSearch() {
+    $("#body").load("search-body.html");
+    $("#navigation > .subsection").remove();
+    $("#navigation").append('<span class="subsection"> "job"</span>');
+    $("#academics").removeClass('selectedTab');
+}
+
+function goToHome() {
+    $("#body").load("index-body.html", function () {
+        location.href = '#';
+    });
+    $("#navigation > .subsection").remove();
+    $("#academics").removeClass('selectedTab');
+}

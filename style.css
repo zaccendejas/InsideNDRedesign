@@ -127,14 +127,19 @@
     padding-top: 2px;
     text-decoration: none;
 }
-#logoTxt{
+
+#logoTxt {
     color: white;
     text-decoration: none;
 }
 
-#homeButton{
+#homeButton {
     color: #0C2340 !important;
     text-decoration: none;
+}
+
+#homeButton:hover {
+    cursor: pointer;
 }
 
 .appIcon {
@@ -181,7 +186,7 @@
 
 .favli {
     display: inline-block;
-    width: 180px;
+    width: 185px;
     height: 40px;
 }
 
@@ -286,6 +291,7 @@ body {
 .body-rect:hover {
     background-color: #E8E8E8;
     color: black;
+    cursor: pointer;
 }
 
 .bodyImg {
@@ -357,6 +363,15 @@ body {
     margin-left: 200px;
 }
 
-#selectedTab {
-    background-color: #a67d0c
+.selectedTab {
+    background-color: #a67d0c;
+}
+
+#LibraryTab:hover {
+    cursor: pointer;
+}
+
+.cardLink {
+    text-decoration: none !important;
+    color: black !important;
 }

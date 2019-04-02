@@ -19,16 +19,18 @@
         <!--        <img class="logo" src="images/logo.png" alt="InsideND">-->
         <div id="logo"><a id="logoTxt" href="index.html">InsideND</a></div>
         <input type="text" placeholder="Search...">
-        <a href="jobSearch.html"><button type="submit" ><i class="fas fa-search"></i></button></a>
+        <a onclick="goToSearch();"><button type="submit"><i class="fas fa-search"></i></button></a>
+        <!--        <a href="jobSearch.html"><button type="submit"><i class="fas fa-search"></i></button></a>-->
         <button id="signout" type="submit">Sign Out</button>
     </div>
     <div id="menu">
         <div class="dropdown">
-            <a href="category.html"><button class="dropbtn" ><span class="fas fa-book"></span> Academics</button></a>
+            <a onclick="goToAcademics('#');"><button class="dropbtn" id="academics"><span class="fas fa-book"></span> Academics</button></a>
+            <!--            <a href="category.html"><button class="dropbtn"><span class="fas fa-book"></span> Academics</button></a>-->
             <div class="dropdown-content">
                 <a href="#"><i class="fas fa-apple-alt"></i> Courses and Grades</a>
-                <a href="category.html#FirstYear"><i class="fas fa-child"></i> First Year of Studies</a>
-                <a href="#"><i class="fas fa-book-reader"></i> Hesburgh Libraries</a>
+                <a href="#FirstYear"><i class="fas fa-child"></i> First Year of Studies</a>
+                <a onclick="goToAcademics('#Library');" id="LibraryTab"><i class="fas fa-book-reader"></i> Hesburgh Libraries</a>
                 <a href="#"><i class="fas fa-university"></i> Colleges</a>
             </div>
         </div>
@@ -51,12 +53,12 @@
         </div>
     </div>
     <div id="nav-house">
-        <h4 id="navigation"><i class="fas fa-home"></i> <i class="fas fa-angle-right"></i></h4>
+        <h4 id="navigation"><a id="homeButton" onclick="goToHome();"><i class="fas fa-home"></i></a> <i class="fas fa-angle-right"></i></h4>
+        <!--        <h4 id="navigation"><a id="homeButton" href="index.html"><i class="fas fa-home"></i></a> <i class="fas fa-angle-right"></i></h4>-->
     </div>
     <div id="main">
-
-
         <div class="container" id="body">
+            <!--
             <div class="row">
                 <div class="col">
                     <p class="body-label">Seasonal:</p>
@@ -134,6 +136,7 @@
                     </div>
                 </div>
             </div>
+-->
         </div>
     </div>
     <div id="left">
@@ -143,7 +146,7 @@
             </div>
             <ul id="currentFavs">
                 <div class="favCard">
-                    <a class="favLink" href="https://cse.nd.edu" target="_blank">
+                    <a class="favLink" href="https://inside.nd.edu/launch-task/all/classsearch" target="_blank">
                         <li class="favli">
                             <img class="appIcon" src="images/ClassSearchIcon.png">
                             <span class="favName" style="height: 60px;">Class Search</span>
