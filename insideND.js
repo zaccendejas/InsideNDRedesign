@@ -1,6 +1,7 @@
 $(document).ready(function () {
     $(".starButton").click(function () {
         cardElement = $(this).parent().parent();
+		console.log(cardElement);
         if ($(this).find('span').hasClass('fa')) {
             console.log('unfavorite');
             if ($("#deletedList").children().length) {
@@ -81,11 +82,35 @@ function starClick(id){
 	var star = card.children[2].children[0];
 
 	if ($(star).hasClass('fa')) {
-		console.log("star is favorited");
+		console.log("unfavorite");
 		$(star).removeClass('fa').addClass('far');
+		fav = document.getElementById(id+"Fav");
+		console.log(fav)
+		if ($("#deletedList").children().length) {
+			console.log('replace');
+			$(fav).fadeOut("slow", function () {
+				$("#deletedList > .favCard").hide();
+				$("#deletedList > .favCard").replaceWith(fav);
+				$(fav).find('.starButton span').removeClass('fa').addClass('far');
+				$(fav).fadeIn("slow");
+			});
+		}
+		else {
+			console.log('deleted is empty');
+			$(fav).fadeOut("slow", function () {
+				$("#deletedList").append(cardElement);
+				$(fav).find('.starButton span').removeClass('fa').addClass('far');
+				$(fav).fadeIn("slow");
+			})
+		}
 	}
 	else{
 		$(star).removeClass('far').addClass('fa');
+		$(fav).hide("slow", function () {
+			$("#currentFavs").append(fav);
+			$(fav).find('.starButton span').removeClass('far').addClass('fa');
+			$(fav).fadeIn("slow");
+		});
 	}
 
 }
