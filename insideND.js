@@ -37,6 +37,8 @@ $(document).ready(function () {
     });
 });
 
+
+
 function goToAcademics(anchor) {
     $("#body").load("academics-body.html", function () {
         location.href = anchor;
@@ -72,4 +74,18 @@ function goToHome() {
     });
     $("#navigation > .subsection").remove();
     $("#academics").removeClass('selectedTab');
+}
+
+function starClick(id){
+	var card = document.getElementById(id);
+	var star = card.children[2].children[0];
+
+	if ($(star).hasClass('fa')) {
+		console.log("star is favorited");
+		$(star).removeClass('fa').addClass('far');
+	}
+	else{
+		$(star).removeClass('far').addClass('fa');
+	}
+
 }
