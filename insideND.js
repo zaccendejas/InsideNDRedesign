@@ -118,6 +118,12 @@ function addFavorite(card){
 	name.innerHTML = card.children[1].children[0].innerHTML;
 	name.setAttribute("style","height: 60px;");
 	console.log(name.innerHTML);
+	if (name.innerHTML == "DART Registration"){
+		name.innerHTML = "DART";
+	}
+	else if (name.innerHTML == "Graduation Progress System"){
+		name.innerHTML ="GPS";
+	}
 
 	var favli= document.createElement("li");
 	favli.className = "favli";
