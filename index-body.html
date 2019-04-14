@@ -5,13 +5,21 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col pr-0">
-                        <div class="row border body-rect">
-                            <div class="col-auto p-0"><img class="bodyImg" src="images/ClassSearchIcon.png"></div>
-                            <div class="col pr-2">
-                                <span class="fa fa-star star_body checked"></span>
-                                <p class="title">Class Search</p>
-                                <p class="description">Filter classes by campus, department, and credits.</p>
-                            </div>
+                        <div class="row border body-rect" id="classSearch">
+                            <div class="col-auto p-0">
+								<a class="cardLink" href="https://class-search-secure.nd.edu/reg/srch/SecureClassSearchServlet;jsessionid=iuvvZCliYzJiRnxz5Y8I7nSLvKJk96vOcgGPuM_XTufMFaCjHVI3!-642931707" target="_blank">
+								<img class="bodyImg" src="images/ClassSearchIcon.png">
+								</a>
+							</div>
+							<a class="cardLink" href="https://class-search-secure.nd.edu/reg/srch/SecureClassSearchServlet;jsessionid=iuvvZCliYzJiRnxz5Y8I7nSLvKJk96vOcgGPuM_XTufMFaCjHVI3!-642931707" target="_blank">
+								<div class="col pr-2">
+									<p class="title">Class Search</p>
+                                	<p class="description">Filter classes by campus, department, and credits.</p>
+                            	</div>
+							</a>
+							<a href="#"  onclick="starClick(this.parentElement.id)">
+								<span class="fa fa-star star_body checked"></span>
+							</a>
                         </div>
                     </div>
                     <div class="col-auto tabBTN pl-0">
@@ -20,13 +28,15 @@
                 </div>
                 <div class="row">
                     <div class="col pr-0">
-                        <div class="row border body-rect">
+                        <div class="row border body-rect" id="DART">
                             <div class="col-auto p-0"><img src="images/DART.png"></div>
                             <div class="col pr-2">
-                                <span class="far fa-star star_body checked"></span>
                                 <p class="title">DART Registration</p>
                                 <p class="description">View registration status and register for classes.</p>
                             </div>
+							<a href="#"  onclick="starClick(this.parentElement.id)">
+								<span class="far fa-star star_body checked"></span>
+							</a>
                         </div>
                     </div>
                     <div class="col-auto tabBTN pl-0">
@@ -35,13 +45,15 @@
                 </div>
                 <div class="row">
                     <div class="col pr-0">
-                        <div class="row border body-rect">
+                        <div class="row border body-rect" id="GPS">
                             <div class="col-auto p-0"><img src="images/GPS.png"></div>
                             <div class="col pr-2">
-                                <span class="far fa-star star_body checked"></span>
                                 <p class="title">Graduation Progress System</p>
                                 <p class="description">Monitor requirements for graduation.</p>
                             </div>
+							<a href="#"  onclick="starClick(this.parentElement.id)">
+								<span class="far fa-star star_body checked"></span>
+							</a>
                         </div>
                     </div>
                     <div class="col-auto tabBTN pl-0">
