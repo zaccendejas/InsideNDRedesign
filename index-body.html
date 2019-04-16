@@ -3,63 +3,11 @@
         <p class="body-label">Seasonal:</p>
         <div class="body-box">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col pr-0">
-                        <div class="row border body-rect" id="classSearch">
-                            <div class="col-auto p-0">
-								<a class="cardLink" href="https://class-search-secure.nd.edu/reg/srch/SecureClassSearchServlet;jsessionid=iuvvZCliYzJiRnxz5Y8I7nSLvKJk96vOcgGPuM_XTufMFaCjHVI3!-642931707" target="_blank">
-								<img class="bodyImg" src="images/ClassSearchIcon.png">
-								</a>
-							</div>
-							<a class="cardLink" href="https://class-search-secure.nd.edu/reg/srch/SecureClassSearchServlet;jsessionid=iuvvZCliYzJiRnxz5Y8I7nSLvKJk96vOcgGPuM_XTufMFaCjHVI3!-642931707" target="_blank">
-								<div class="col pr-2">
-									<p class="title">Class Search</p>
-                                	<p class="description">Filter classes by campus, department, and credits.</p>
-                            	</div>
-							</a>
-							<a href="#"  onclick="starClick(this.parentElement.id)">
-								<span class="fa fa-star star_body checked"></span>
-							</a>
-                        </div>
-                    </div>
-                    <div class="col-auto tabBTN pl-0">
-                        <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="Search for classes by filtering by semester, campus, attribute, and credits. This results in a list of classes showing their time, place, professors, and number of seats taken."><span class="fa fa-2x fa-angle-right"></span></button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col pr-0">
-                        <div class="row border body-rect" id="DART">
-                            <div class="col-auto p-0"><img src="images/DART.png"></div>
-                            <div class="col pr-2">
-                                <p class="title">DART Registration</p>
-                                <p class="description">View registration status and register for classes.</p>
-                            </div>
-							<a href="#"  onclick="starClick(this.parentElement.id)">
-								<span class="far fa-star star_body checked"></span>
-							</a>
-                        </div>
-                    </div>
-                    <div class="col-auto tabBTN pl-0">
-                        <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="DART allows you to register for classes, add and drop classes, view holds which effect registration ability, and view your course schedule in both a detailed list and a weekly view."><span class="fa fa-2x fa-angle-right"></span></button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col pr-0">
-                        <div class="row border body-rect" id="GPS">
-                            <div class="col-auto p-0"><img src="images/GPS.png"></div>
-                            <div class="col pr-2">
-                                <p class="title">Graduation Progress System</p>
-                                <p class="description">Monitor requirements for graduation.</p>
-                            </div>
-							<a href="#"  onclick="starClick(this.parentElement.id)">
-								<span class="far fa-star star_body checked"></span>
-							</a>
-                        </div>
-                    </div>
-                    <div class="col-auto tabBTN pl-0">
-                        <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="And here's some amazing content. It's very engaging. Right?"><span class="fa fa-2x fa-angle-right"></span></button>
-                    </div>
-                </div>
+                <script>
+                  buildCard("classSearch", "images/ClassSearchIcon.png", "https://class-search-secure.nd.edu/reg/srch/SecureClassSearchServlet;jsessionid=iuvvZCliYzJiRnxz5Y8I7nSLvKJk96vOcgGPuM_XTufMFaCjHVI3!-642931707", "Class Search", "Filter classes by campus, department, and credits.", "fa", "Search for classes by filtering by semester, campus, attribute, and credits. This results in a list of classes showing their time, place, professors, and number of seats taken.");
+                  buildCard("DART", "images/DART.png", "#", "DART Registration", "View registration status and register for classes.", "far",  "DART allows you to register for classes, add and drop classes, view holds which effect registration ability, and view your course schedule in both a detailed list and a weekly view.")
+                  buildCard("GPS", "images/GPS.png", "#", "Graduation Progress System", "Monitor requirements for graduation.", "far", "And here's some amazing content. It's very engaging. Right?");
+                </script>
             </div>
         </div>
     </div>

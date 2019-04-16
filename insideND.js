@@ -108,14 +108,16 @@ function favorite(card){
 }
 
 function addFavorite(card){
+  console.log("addFavorite");
+  console.log(card);
 	var img = document.createElement("img");
 	img.className = "appIcon";
-	img.src = card.children[0].children[0].src;
-	console.log(img.src);
+	img.src = card.children[0].children[0].children[0].src;
+	console.log(card.children[1].children[0].children[0]);
 
 	var name = document.createElement("span");
 	name.className = "favName";
-	name.innerHTML = card.children[1].children[0].innerHTML;
+	name.innerHTML = card.children[1].children[0].children[0].innerHTML;
 	name.setAttribute("style","height: 60px;");
 	console.log(name.innerHTML);
 	if (name.innerHTML == "DART Registration"){
@@ -162,6 +164,10 @@ function addFavorite(card){
 
 function starClick(id){
 	var card = document.getElementById(id);
+  // console.log(card);
+  // console.log(id);
+  // var card = id;
+  // console.log(card);
 	var star = card.children[2].children[0];
 	var fav = document.getElementById(id+"Fav");
 
@@ -170,7 +176,6 @@ function starClick(id){
 		$(star).removeClass('fa').addClass('far');
 		console.log(fav)
 		unfavorite(fav);
-
 	}
 	else{
 		console.log("favoriting");
@@ -182,6 +187,98 @@ function starClick(id){
 			addFavorite(card);
 		}
 	}
+}
 
+function createDiv(classDiv){
+  var div = document.createElement("div");
+  div.className = classDiv
+  return div;
+}
 
+function createImage(classImg, srcImg){
+  var picture = document.createElement("img");
+  picture.className = classImg;
+  picture.src = srcImg;
+  return picture;
+}
+
+function createLink(classLink, linkHref){
+  var link = document.createElement("a");
+  link.className = classLink;
+  link.href = linkHref;
+  return link;
+}
+
+function createP(classP, text){
+  var p = document.createElement("p");
+  p.className = classP;
+  p.innerHTML = text;
+  return p;
+}
+
+function createSpan(classSpan){
+  var span = document.createElement("span");
+  span.className= classSpan;
+  return span;
+}
+
+function createButtonDescript(description){
+  var button = document.createElement("button");
+  button.type = "button";
+  button.className = "btn btn-secondary descriptionBtn p-0";
+  button.setAttribute("data-toggle", "popover");
+  button.setAttribute("data-trigger","hover focus");
+  button.setAttribute("data-content", description);
+  return button;
+}
+
+function buildCard(idName, photo, linkHref, title, subtitle, star, description, parent){
+  console.log("building card");
+  console.log(idName);
+  var picture = createImage("bodyImg", photo);
+  var pictureLink = createLink("cardLink", linkHref);
+  pictureLink.setAttribute("target", "_blank");
+  pictureLink.appendChild(picture);
+  var divPic = createDiv("col-auto p-0");
+  divPic.appendChild(pictureLink);
+
+  var titleP = createP("title", title);
+  var subtitleP = createP("description", subtitle);
+  var divText = createDiv("col pr-2");
+  divText.appendChild(titleP);
+  divText.appendChild(subtitleP);
+  var textLink = createLink("cardLink", linkHref);
+  textLink.setAttribute("target", "_blank");
+  textLink.appendChild(divText);
+
+  var star = createSpan(star + " fa-star star_body checked");
+  var starLink = document.createElement("a");
+  starLink.href = "#";
+  starLink.setAttribute("onclick",  'starClick("'+idName+'")');
+  starLink.appendChild(star);
+
+  var border = createDiv("row border body-rect");
+  border.id = idName;
+  border.appendChild(divPic);
+  border.appendChild(textLink);
+  border.appendChild(starLink);
+
+  var colDiv = createDiv("col pr-0");
+  colDiv.appendChild(border);
+
+  var arrow = createSpan("fa fa-2x fa-angle-right");
+  var descript = createButtonDescript(description);
+  descript.appendChild(arrow);
+
+  var btnDiv = createDiv("col-auto tabBTN pl-0");
+  btnDiv.appendChild(descript);
+
+  var outerRowDiv = createDiv("row");
+  outerRowDiv.appendChild(colDiv);
+  outerRowDiv.appendChild(btnDiv);
+  console.log(outerRowDiv);
+  var scriptTag = document.getElementsByTagName('script');
+  scriptTag = scriptTag[scriptTag.length - 1];
+  var parentTag = scriptTag.parentNode;
+  parentTag.appendChild(outerRowDiv)
 }
