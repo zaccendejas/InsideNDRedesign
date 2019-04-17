@@ -19,7 +19,19 @@ $(document).ready(function () {
     });
 });
 
-
+function clickedStarFav(){
+  console.log($(this));
+  cardElement = $(this).parent().parent();
+  console.log(cardElement);
+  if ($(this).find('span').hasClass('fa')) {
+      console.log('unfavorite');
+      unfavorite(cardElement);
+      $(this).find('span').addClass('far').removeClass('far');
+  } else {
+      console.log('favorite');
+      favorite(cardElement);
+  }
+}
 
 function goToAcademics(anchor) {
     $("#body").load("academics-body.html", function () {
@@ -79,6 +91,7 @@ function unfavorite(card){
 }
 
 function favorite(card){
+  console.log(favorite);
 	$(card).hide("slow", function () {
 		$("#currentFavs").append(card);
 		$(card).find('.starButton span').removeClass('far').addClass('fa');
@@ -126,6 +139,8 @@ function addFavorite(card){
 
 	var starButton = document.createElement("button");
 	starButton.className="starButton";
+  starButton.id = card.id+"Button";
+  starButton.addEventListener("click", clickedStarFav);
 	starButton.appendChild(star);
 
 	var liStar = document.createElement("span");
@@ -211,8 +226,6 @@ function createButtonDescript(description){
 }
 
 function buildCard(idName, photo, linkHref, title, subtitle, star, description, single = false){
-  console.log("building card");
-  console.log(idName);
   var picture = createImage("bodyImg", photo);
   var pictureLink = createLink("cardLink", linkHref);
   pictureLink.setAttribute("target", "_blank");
@@ -255,7 +268,6 @@ function buildCard(idName, photo, linkHref, title, subtitle, star, description, 
   var outerRowDiv = createDiv("row");
   outerRowDiv.appendChild(colDiv);
   outerRowDiv.appendChild(btnDiv);
-  console.log(outerRowDiv);
   if(single){
     var scriptTag = document.getElementsByTagName('script');
     scriptTag = scriptTag[scriptTag.length - 1];
@@ -285,11 +297,6 @@ function buildRow(idSection, card1, card2 = null, card3 = null,){
     divRow.appendChild(col3);
   }
 
-  // var scriptTag = document.getElementsById('script');
-  // scriptTag = scriptTag[scriptTag.length - 1];
-  // var scriptTag = document.currentScript;
-  // console.log(scriptTag);
-  // var parentTag = scriptTag.parentNode;
   var parentTag = document.getElementById(idSection);
   console.log(parentTag);
   parentTag.appendChild(divRow);
