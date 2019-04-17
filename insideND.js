@@ -5,30 +5,9 @@ $(document).ready(function () {
         if ($(this).find('span').hasClass('fa')) {
             console.log('unfavorite');
 			unfavorite(cardElement);
-            // if ($("#deletedList").children().length) {
-            //     console.log('replace');
-            //     cardElement.fadeOut("slow", function () {
-            //         $("#deletedList > .favCard").hide();
-            //         $("#deletedList > .favCard").replaceWith(cardElement);
-            //         cardElement.find('.starButton span').removeClass('fa').addClass('far');
-            //         cardElement.fadeIn("slow");
-            //     });
-            // } else {
-            //     console.log('deleted is empty');
-            //     cardElement.fadeOut("slow", function () {
-            //         $("#deletedList").append(cardElement);
-            //         cardElement.find('.starButton span').removeClass('fa').addClass('far');
-            //         cardElement.fadeIn("slow");
-            //     })
-            // }
             $(this).find('span').addClass('far').removeClass('far');
         } else {
             console.log('favorite');
-            // cardElement.hide("slow", function () {
-            //     $("#currentFavs").append(cardElement);
-            //     cardElement.find('.starButton span').removeClass('far').addClass('fa');
-            //     cardElement.fadeIn("slow");
-            // });
 			favorite(cardElement);
         }
     });
@@ -126,6 +105,9 @@ function addFavorite(card){
 	else if (name.innerHTML == "Graduation Progress System"){
 		name.innerHTML ="GPS";
 	}
+  else if (name.innerHTML == "Submit Course and Instructor Evaluation"){
+    name.innerHTML = "Submit CIFs";
+  }
 
 	var favli= document.createElement("li");
 	favli.className = "favli";
@@ -164,10 +146,6 @@ function addFavorite(card){
 
 function starClick(id){
 	var card = document.getElementById(id);
-  // console.log(card);
-  // console.log(id);
-  // var card = id;
-  // console.log(card);
 	var star = card.children[2].children[0];
 	var fav = document.getElementById(id+"Fav");
 
@@ -232,7 +210,7 @@ function createButtonDescript(description){
   return button;
 }
 
-function buildCard(idName, photo, linkHref, title, subtitle, star, description, parent){
+function buildCard(idName, photo, linkHref, title, subtitle, star, description, single = false){
   console.log("building card");
   console.log(idName);
   var picture = createImage("bodyImg", photo);
@@ -244,14 +222,15 @@ function buildCard(idName, photo, linkHref, title, subtitle, star, description, 
 
   var titleP = createP("title", title);
   var subtitleP = createP("description", subtitle);
-  var divText = createDiv("col pr-2");
+  // var divText = createDiv("col pr-2");
+  var divText = createDiv("pr-2");
   divText.appendChild(titleP);
   divText.appendChild(subtitleP);
-  var textLink = createLink("cardLink", linkHref);
+  var textLink = createLink("cardLink col", linkHref);
   textLink.setAttribute("target", "_blank");
   textLink.appendChild(divText);
 
-  var star = createSpan(star + " fa-star star_body checked");
+  var star = createSpan(star + " fa-star star_body checked pr-1");
   var starLink = document.createElement("a");
   starLink.href = "#";
   starLink.setAttribute("onclick",  'starClick("'+idName+'")');
@@ -277,8 +256,32 @@ function buildCard(idName, photo, linkHref, title, subtitle, star, description, 
   outerRowDiv.appendChild(colDiv);
   outerRowDiv.appendChild(btnDiv);
   console.log(outerRowDiv);
+  if(single){
+    var scriptTag = document.getElementsByTagName('script');
+    scriptTag = scriptTag[scriptTag.length - 1];
+    var parentTag = scriptTag.parentNode;
+    parentTag.appendChild(outerRowDiv);
+  }
+  else{
+    return outerRowDiv;
+  }
+}
+
+function buildRow(card1, card2, card3){
+  var divRow = createDiv("row");
+  var col1 = createDiv("col-4");
+  col1.appendChild(card1);
+  divRow.appendChild(col1);
+
+  var col2 = createDiv("col-4");
+  col2.appendChild(card2);
+  divRow.appendChild(col2);
+
+  var col3 = createDiv("col-4");
+  col3.appendChild(card3);
+  divRow.appendChild(col3);
   var scriptTag = document.getElementsByTagName('script');
   scriptTag = scriptTag[scriptTag.length - 1];
   var parentTag = scriptTag.parentNode;
-  parentTag.appendChild(outerRowDiv)
+  parentTag.appendChild(divRow);
 }
