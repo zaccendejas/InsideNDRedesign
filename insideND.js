@@ -267,7 +267,7 @@ function buildCard(idName, photo, linkHref, title, subtitle, star, description, 
   }
 }
 
-function buildRow(card1, card2 = null, card3 = null){
+function buildRow(idSection, card1, card2 = null, card3 = null,){
   var divRow = createDiv("row");
   var col1 = createDiv("col-4");
   col1.appendChild(card1);
@@ -284,9 +284,13 @@ function buildRow(card1, card2 = null, card3 = null){
     col3.appendChild(card3);
     divRow.appendChild(col3);
   }
-  
-  var scriptTag = document.getElementsByTagName('script');
-  scriptTag = scriptTag[scriptTag.length - 1];
-  var parentTag = scriptTag.parentNode;
+
+  // var scriptTag = document.getElementsById('script');
+  // scriptTag = scriptTag[scriptTag.length - 1];
+  // var scriptTag = document.currentScript;
+  // console.log(scriptTag);
+  // var parentTag = scriptTag.parentNode;
+  var parentTag = document.getElementById(idSection);
+  console.log(parentTag);
   parentTag.appendChild(divRow);
 }

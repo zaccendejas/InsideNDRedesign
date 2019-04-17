@@ -1,32 +1,61 @@
 <div id="Courses">
     <p class="subsection border-bottom">Courses</p>
           <script>
-            buildRow(
-              buildCard("CIF", "images/cif.png", "#", "Submit Course and Instructor Evaluation", "Give feedback on each course.", "far", "At the end of each semester, provide feedback about the instructor and the course. The feedback will be seen by the department and the professor. Those who submit all CIFs will have access to their final grades earlier."),
+            buildRow("Courses",
+              buildCard("CIF", "images/cif.png", "#", "Course and Instructor Evaluation", "Give feedback on each course.", "far", "At the end of each semester, provide feedback about the instructor and the course. The feedback will be seen by the department and the professor. Those who submit all CIFs will have access to their final grades earlier."),
               buildCard("classSearch", "images/ClassSearchIcon.png", "https://class-search-secure.nd.edu/reg/srch/SecureClassSearchServlet;jsessionid=iuvvZCliYzJiRnxz5Y8I7nSLvKJk96vOcgGPuM_XTufMFaCjHVI3!-642931707", "Class Search", "Filter classes by campus, department, and credits.", "fa", "Search for classes by filtering by semester, campus, attribute, and credits. This results in a list of classes showing their time, place, professors, and number of seats taken."),
               buildCard("conciseSchedule", "images/concise_schedule.png", "#", "Concise Student Schedule", "View your schedule for each semester", "far", "View what classes you are taking for a given semester. You can also get information about where and when they meet and who teaches each course.")
             );
-            buildRow(
+            buildRow("Courses",
               buildCard("DART", "images/DART.png", "#", "DART Registration", "View registration status and register for classes.", "far",  "DART allows you to register for classes, add and drop classes, view holds which effect registration ability, and view your course schedule in both a detailed list and a weekly view."),
               buildCard("eForms", "images/eForms.png", "#", "eForms", "Forms for any academic class change.", "far", "Add/Drop, Audit, Cross-list Section, Credit Hr, and Title Change, Final Exam Conflict, Separation from the University, Summer Session Discontinuance, and Transfer Course Pre-Approval."),
               buildCard("finalExams", "images/FinalExamSummary.png", "#", "Final Exam Summary","Lists when and where your final exams are.", "far", "View the official time and location of all your final exams. This gets updated periodically throughout the semester, so be sure to continually check for any updates." )
             );
-            buildRow(
+            buildRow("Courses",
               buildCard("follet", "images/follet.png", "#", "Follet Discovery Access", "Aquire your textbooks.", "far", "Follett Discover Access™ enables students to easily view and purchase required course materials."),
               buildCard("GPS", "images/GPS.png", "#", "Graduation Progress System", "Monitor requirements for graduation.", "far", "Lists all required courses to be eligible for graduation. Includes GPA calculator. You can also check what your status would be if you were to change majors."),
               buildCard("mango", "images/mango.png", "#", "Mango Languages", "Learn a language for class or for fun.", "far", "Mango Languages creates lovable language-learning experiences for libraries, schools, government agencies, and individuals. Mango's software teaches real conversation in over 60 languages and makes it fun-no snoozefests here! You'll learn to speak new languages and meet new cultures through authentic experiences: like overhearing a conversation between native speakers, watching a suspense-ridden action flick, or singing along with a romantic pop song. So, enjoy the journey with lovable language learning from Mango Languages. Learn at home, or on the go with the Mango Languages mobile application!"),
             );
-            buildRow(
+            buildRow("Courses",
               buildCard("mendoza", "images/mendoza.png", "#", "Mendoza School of Business", "Explore all of the ND business programs", "far", "Mendoza is a nationally ranked College of Business. Learn about the degrees and programs that are a part of the college."),
               buildCard("novo", "images/Novo.png", "#", "NOVO Registration", "Search and register for classes.", "far", "Search for classes. Register for classes. Add or drop a class."),
               buildCard("panopto", "images/panopto.png", "#", "Panopto", "Watch recorded lectures from your classes.", "far", "If you professor has set up Panopto, you will be able to watch the lectures any time.")
             );
-            buildRow(
+            buildRow("Courses",
               buildCard("sakai", "images/Sakai.png", "#", "Sakai", "Find and submit assignments and see class resources.", "far", "Access assignments, resources, and announcements posted by your professors for each course."),
               buildCard("abroad", "images/studyAbroad.png", "#", "Study Abroad", "Apply and prepare for studying abroad.", "far", "At the University of Notre Dame, students have numerous opportunities to participate in international academic programs—to undertake part of their education abroad. In keeping with its mission and vision, Notre Dame International creates and administers a growing variety of Study Abroad programs and acts as a clearinghouse to make students aware of other opportunities abroad. NDI also provides guidance and support on international travel to help students make well-informed decisions.")
             );
 
           </script>
+</div>
+<div id=Grades>
+  <p class="subsection border-bottom">Grades</p>
+  <script>
+    buildRow("Grades",
+      buildCard("finalGrades", "images/Final_Grades.png", "#", "Final Grades", "View your final grades for a given semester.", "far", "View your final and offical grade for all of your courses. These grades will appear on your transcript."),
+      buildCard("gradeHistory", "images/GradeHistory.png", "#", "Grade History", "View all of your grades. This is not an official transcript.", "far", "View your grades for all courses taken. For an official transcript please see the Order Transcript app."),
+      buildCard("midGrades", "images/MidTermGrades.png", "#", "Mid-Term Grades", "View your mid-term grades for a given semester.", "far", "View your mid-term grades. These are not official grades, but are helpful in understanding your performance in a class in the first half of the semester.")
+    );
+    buildRow("Grades",
+      buildCard("transcript", "images/TranscriptRequest.png", "#", "Request Transcript", "Request and official digital or paper transcript.", "far", "Many jobs and graduate school applications require that you submit an official transcript. Be sure to know who you are sending it too. You will be notified when they have recieved the transcript and when they have opened it.")
+    );
+
+  </script>
+</div>
+<div id="Career">
+  <p class="subsection border-bottom">Career</p>
+  <script>
+    buildRow("Career",
+      buildCard("alumni", "images/Alumni_LinkedIn_Group.png", "#", "Alumni LinkedIn Group", "Connect with ND alumni to build your network.", "far", "Connecting with alumni can be a great way to find jobs and internships, or even begin a mentoship."),
+      buildCard("careerCenter", "images/careerDev.png", "#", "Center for Career Development", "Make an appointment or view jobs posted.", "far", "Access Go Irish and your career counselor all in one place! Everything you need to get a job and begin your career after Notre Dame is available to you."),
+      buildCard("ePortfolio", "images/ePortfolio.png", "#", "ePortfolio", "Develop your own portfolio to show off your work.", "far", "An ePortfolio is a personal, educational, and professional website that functions as a workspace and showcase to collect, select, reflect, link, and publish the story of an individual's experience, knowledge, skills, and dispositions as multimedia evidence.  At Notre Dame, ePortfolios are used for advising, study abroad, professional development, personal websites, and as a component of campus or online courses.  The slides below show some great examples of ePortfolios on campus.")
+    );
+    buildRow("Career",
+      buildCard("goIrish", "images/GoIrish.png", "#", "GoIrish", "View jobs and internships posted for ND students.", "far", "Go IRISH is The Center for Career Development's primary recruiting database. Includes both on-campus and off-campus interviewing opportunities for jobs and internships.Go IRISH can also be used to view upcoming employer information sessions, pre-nights, and career fair participants. It also serves as a job search engine for internship and full-time opportunities specifically seeking ND talent."),
+      buildCard("IrishCompass", "images/IrishCompass.png", "#", "IrishCompass", "Find an alumni to be your mentor.", "far", "Driving powerful professional connections within the Notre Dame Network with Student-Alumni Mentoring and ND Community Engagement.")
+    );
+  </script>
+</div>
 
         <!-- </div>
         <div class="col-4" id="2">
