@@ -19,16 +19,15 @@ $(document).ready(function () {
     });
 });
 
-function clickedStarFav(){
-  console.log($(this));
-  cardElement = $(this).parent().parent();
-  console.log(cardElement);
-  if ($(this).find('span').hasClass('fa')) {
+function clickedStarFav(cardClick){
+  var cardElement = cardClick.parentElement.parentElement;
+  if (cardClick.children[0].classList.contains('fa')) {
       console.log('unfavorite');
       unfavorite(cardElement);
-      $(this).find('span').addClass('far').removeClass('far');
+      $(this).find('span').addClass('far').removeClass('fa');
   } else {
       console.log('favorite');
+      console.log(cardElement);
       favorite(cardElement);
   }
 }
@@ -71,6 +70,12 @@ function goToHome() {
 }
 
 function unfavorite(card){
+  var cardBody = document.getElementById(card.id.substring(0, card.id.length-3));
+  if (cardBody != null){
+    var star = cardBody.children[2].children[0];
+    star.classList.remove("fa");
+    star.classList.add("far");
+  }
 	if ($("#deletedList").children().length) {
 		console.log('replace');
 		$(card).fadeOut("slow", function () {
@@ -91,7 +96,12 @@ function unfavorite(card){
 }
 
 function favorite(card){
-  console.log(favorite);
+  var cardBody = document.getElementById(card.id.substring(0, card.id.length-3));
+  if (cardBody != null){
+    var star = cardBody.children[2].children[0];
+    star.classList.remove("far");
+    star.classList.add("fa");
+  }
 	$(card).hide("slow", function () {
 		$("#currentFavs").append(card);
 		$(card).find('.starButton span').removeClass('far').addClass('fa');
@@ -140,7 +150,7 @@ function addFavorite(card){
 	var starButton = document.createElement("button");
 	starButton.className="starButton";
   starButton.id = card.id+"Button";
-  starButton.addEventListener("click", clickedStarFav);
+  starButton.setAttribute("onclick", "clickedStarFav(this)");
 	starButton.appendChild(star);
 
 	var liStar = document.createElement("span");
