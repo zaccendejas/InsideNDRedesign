@@ -2,33 +2,32 @@
     <p class="subsection border-bottom">Courses</p>
           <script>
             buildRow(
-              buildCard("CIF", "images/cif.png", "#", "Submit Course and Instructor Evaluation", "Give feedback.", "far", "At the end of each semester, provide feedback about the instructor and the course. The feedback will be seen by the department and the professor. Those who submit all CIFs will have access to their final grades earlier."),
+              buildCard("CIF", "images/cif.png", "#", "Submit Course and Instructor Evaluation", "Give feedback on each course.", "far", "At the end of each semester, provide feedback about the instructor and the course. The feedback will be seen by the department and the professor. Those who submit all CIFs will have access to their final grades earlier."),
               buildCard("classSearch", "images/ClassSearchIcon.png", "https://class-search-secure.nd.edu/reg/srch/SecureClassSearchServlet;jsessionid=iuvvZCliYzJiRnxz5Y8I7nSLvKJk96vOcgGPuM_XTufMFaCjHVI3!-642931707", "Class Search", "Filter classes by campus, department, and credits.", "fa", "Search for classes by filtering by semester, campus, attribute, and credits. This results in a list of classes showing their time, place, professors, and number of seats taken."),
-              buildCard("classSearch", "images/ClassSearchIcon.png", "https://class-search-secure.nd.edu/reg/srch/SecureClassSearchServlet;jsessionid=iuvvZCliYzJiRnxz5Y8I7nSLvKJk96vOcgGPuM_XTufMFaCjHVI3!-642931707", "Class Search", "Filter classes by campus, department, and credits.", "fa", "Search for classes by filtering by semester, campus, attribute, and credits. This results in a list of classes showing their time, place, professors, and number of seats taken.")
+              buildCard("conciseSchedule", "images/concise_schedule.png", "#", "Concise Student Schedule", "View your schedule for each semester", "far", "View what classes you are taking for a given semester. You can also get information about where and when they meet and who teaches each course.")
+            );
+            buildRow(
+              buildCard("DART", "images/DART.png", "#", "DART Registration", "View registration status and register for classes.", "far",  "DART allows you to register for classes, add and drop classes, view holds which effect registration ability, and view your course schedule in both a detailed list and a weekly view."),
+              buildCard("eForms", "images/eForms.png", "#", "eForms", "Forms for any academic class change.", "far", "Add/Drop, Audit, Cross-list Section, Credit Hr, and Title Change, Final Exam Conflict, Separation from the University, Summer Session Discontinuance, and Transfer Course Pre-Approval."),
+              buildCard("finalExams", "images/FinalExamSummary.png", "#", "Final Exam Summary","Lists when and where your final exams are.", "far", "View the official time and location of all your final exams. This gets updated periodically throughout the semester, so be sure to continually check for any updates." )
+            );
+            buildRow(
+              buildCard("follet", "images/follet.png", "#", "Follet Discovery Access", "Aquire your textbooks.", "far", "Follett Discover Access™ enables students to easily view and purchase required course materials."),
+              buildCard("GPS", "images/GPS.png", "#", "Graduation Progress System", "Monitor requirements for graduation.", "far", "Lists all required courses to be eligible for graduation. Includes GPA calculator. You can also check what your status would be if you were to change majors."),
+              buildCard("mango", "images/mango.png", "#", "Mango Languages", "Learn a language for class or for fun.", "far", "Mango Languages creates lovable language-learning experiences for libraries, schools, government agencies, and individuals. Mango's software teaches real conversation in over 60 languages and makes it fun-no snoozefests here! You'll learn to speak new languages and meet new cultures through authentic experiences: like overhearing a conversation between native speakers, watching a suspense-ridden action flick, or singing along with a romantic pop song. So, enjoy the journey with lovable language learning from Mango Languages. Learn at home, or on the go with the Mango Languages mobile application!"),
+            );
+            buildRow(
+              buildCard("mendoza", "images/mendoza.png", "#", "Mendoza School of Business", "Explore all of the ND business programs", "far", "Mendoza is a nationally ranked College of Business. Learn about the degrees and programs that are a part of the college."),
+              buildCard("novo", "images/Novo.png", "#", "NOVO Registration", "Search and register for classes.", "far", "Search for classes. Register for classes. Add or drop a class."),
+              buildCard("panopto", "images/panopto.png", "#", "Panopto", "Watch recorded lectures from your classes.", "far", "If you professor has set up Panopto, you will be able to watch the lectures any time.")
+            );
+            buildRow(
+              buildCard("sakai", "images/Sakai.png", "#", "Sakai", "Find and submit assignments and see class resources.", "far", "Access assignments, resources, and announcements posted by your professors for each course."),
+              buildCard("abroad", "images/studyAbroad.png", "#", "Study Abroad", "Apply and prepare for studying abroad.", "far", "At the University of Notre Dame, students have numerous opportunities to participate in international academic programs—to undertake part of their education abroad. In keeping with its mission and vision, Notre Dame International creates and administers a growing variety of Study Abroad programs and acts as a clearinghouse to make students aware of other opportunities abroad. NDI also provides guidance and support on international travel to help students make well-informed decisions.")
             );
 
           </script>
-            <!-- <div class="row">
-                <div class="col pr-0">
-                    <div class="row border body-rect">
-                        <div class="col-auto p-0">
-                            <a href="https://inside.nd.edu/launch-task/all/classsearch" class="cardLink" target="_blank">
-                                <img class="bodyImg" src="images/ClassSearchIcon.png">
-                            </a>
-                        </div>
-                        <div class="col pr-2">
-                            <span class="fa fa-star star_body checked"></span>
-                            <a href="https://inside.nd.edu/launch-task/all/classsearch" class="cardLink" target="_blank">
-                                <p class="title">Class Search</p>
-                                <p class="description">Filter classes by campus, department, and credits.</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto tabBTN pl-0">
-                    <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="Search for classes by filtering by semester, campus, attribute, and credits. This results in a list of classes showing their time, place, professors, and number of seats taken."><span class="fa fa-2x fa-angle-right"></span></button>
-                </div>
-            </div> -->
+
         <!-- </div>
         <div class="col-4" id="2">
           <script>
@@ -50,46 +49,8 @@
                     <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="DART allows you to register for classes, add and drop classes, view holds which effect registration ability, and view your course schedule in both a detailed list and a weekly view."><span class="fa fa-2x fa-angle-right"></span></button>
                 </div>
             </div> -->
-        <!-- </div>
-        <div class="col-4"> -->
-          <!-- <script>
-            buildCard("classSearch", "images/ClassSearchIcon.png", "https://class-search-secure.nd.edu/reg/srch/SecureClassSearchServlet;jsessionid=iuvvZCliYzJiRnxz5Y8I7nSLvKJk96vOcgGPuM_XTufMFaCjHVI3!-642931707", "Class Search", "Filter classes by campus, department, and credits.", "fa", "Search for classes by filtering by semester, campus, attribute, and credits. This results in a list of classes showing their time, place, professors, and number of seats taken.");
-          </script> -->
-            <!-- <div class="row">
-                <div class="col pr-0">
-                    <div class="row border body-rect">
-                        <div class="col-auto p-0"><img src="images/GPS.png"></div>
-                        <div class="col pr-2">
-                            <span class="far fa-star star_body checked"></span>
-                            <p class="title">Graduation Progess System</p>
-                            <p class="description">Monitor requirements for graduation.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto tabBTN pl-0">
-                    <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="See the requirements that you need to graduate."><span class="fa fa-2x fa-angle-right"></span></button>
-                </div>
-            </div> -->
-        <!-- </div>
-    </div> -->
     <!-- <div class="row">
-        <div class="col-4">
-            <div class="row">
-                <div class="col pr-0">
-                    <div class="row border body-rect">
-                        <div class="col-auto p-0"><img class="bodyImg" src="images/FinalExamSummary.png"></div>
-                        <div class="col pr-2">
-                            <span class="far fa-star star_body checked"></span>
-                            <p class="title">Final Exam Summary</p>
-                            <p class="description">Lists when and where your final exams are.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto tabBTN pl-0">
-                    <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="View the official time and location of all your final exams. This gets updated periodically throughout the semester, so be sure to continually check for any updates."><span class="fa fa-2x fa-angle-right"></span></button>
-                </div>
-            </div>
-        </div>
+
         <div class="col-4">
             <div class="row">
                 <div class="col pr-0">
@@ -104,23 +65,6 @@
                 </div>
                 <div class="col-auto tabBTN pl-0">
                     <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="View your final and offical grade for all of your courses. These grades will appear on your transcript."><span class="fa fa-2x fa-angle-right"></span></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="row">
-                <div class="col pr-0">
-                    <div class="row border body-rect">
-                        <div class="col-auto p-0"><img src="images/concise_schedule.png"></div>
-                        <div class="col pr-2">
-                            <span class="far fa-star star_body checked"></span>
-                            <p class="title">Concise Student Schedule</p>
-                            <p class="description">View your schedule for each semester.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-auto tabBTN pl-0">
-                    <button type="button" class="btn btn-secondary descriptionBtn p-0" data-toggle="popover" data-trigger="hover focus" data-content="View what classes you are taking for a given semester. You can also get information about where and when they meet and who teaches each course."><span class="fa fa-2x fa-angle-right"></span></button>
                 </div>
             </div>
         </div>

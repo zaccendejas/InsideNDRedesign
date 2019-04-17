@@ -267,19 +267,24 @@ function buildCard(idName, photo, linkHref, title, subtitle, star, description, 
   }
 }
 
-function buildRow(card1, card2, card3){
+function buildRow(card1, card2 = null, card3 = null){
   var divRow = createDiv("row");
   var col1 = createDiv("col-4");
   col1.appendChild(card1);
   divRow.appendChild(col1);
 
-  var col2 = createDiv("col-4");
-  col2.appendChild(card2);
-  divRow.appendChild(col2);
+  if (card2 != null){
+    var col2 = createDiv("col-4");
+    col2.appendChild(card2);
+    divRow.appendChild(col2);
+  }
 
-  var col3 = createDiv("col-4");
-  col3.appendChild(card3);
-  divRow.appendChild(col3);
+  if (card3 != null){
+    var col3 = createDiv("col-4");
+    col3.appendChild(card3);
+    divRow.appendChild(col3);
+  }
+  
   var scriptTag = document.getElementsByTagName('script');
   scriptTag = scriptTag[scriptTag.length - 1];
   var parentTag = scriptTag.parentNode;
