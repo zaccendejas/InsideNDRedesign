@@ -12,7 +12,8 @@ $(document).ready(function () {
         }
     });
     $("#body").load("index-body.html", function () {
-        $("[data-toggle=popover]").popover();
+        checkFavorites();
+	$("[data-toggle=popover]").popover();
         $('.popover-dismiss').popover({
             trigger: 'focus'
         });
@@ -31,10 +32,29 @@ function clickedStarFav(cardClick){
       favorite(cardElement);
   }
 }
+function checkFavorites(){
+    var favs = document.getElementById("currentFavs");
+    var Favchildren = favs.children;
+    for (var i =0; i < Favchildren.length; i++)
+      {
+        var bodyCard = document.getElementById(Favchildren[i].id.substring(0, Favchildren[i].id.length-3));
+       	if(bodyCard!=null)
+	{
+	    var idF = Favchildren[i].id.substring(0, Favchildren[i].id.length-3);
+	    var star = bodyCard.children[2].children[0];
+	    if (star.classList.contains("far"))
+            {
+               star.classList.remove("far");
+               star.classList.add("fa");
+            }
+	}
+    }
 
+}
 function goToAcademics(anchor) {
     $("#body").load("academics-body.html", function () {
-        location.href = anchor;
+        checkFavorites();
+	location.href = anchor;
         $("[data-toggle=popover]").popover();
         $('.popover-dismiss').popover({
             trigger: 'focus'
@@ -47,6 +67,7 @@ function goToAcademics(anchor) {
 
 function goToSearch() {
     $("#body").load("search-body.html", function () {
+	checkFavorites();
         $("[data-toggle=popover]").popover();
         $('.popover-dismiss').popover({
             trigger: 'focus'
@@ -59,6 +80,7 @@ function goToSearch() {
 
 function goToHome() {
     $("#body").load("index-body.html", function () {
+	checkFavorites();
         location.href = '#';
         $("[data-toggle=popover]").popover();
         $('.popover-dismiss').popover({
@@ -235,7 +257,7 @@ function createButtonDescript(description){
   return button;
 }
 
-function buildCard(idName, photo, linkHref, title, subtitle, star, description, single = false){
+function buildCard(idName, photo, linkHref, title, subtitle, description, single = false){
   var picture = createImage("bodyImg", photo);
   var pictureLink = createLink("cardLink", linkHref);
   pictureLink.setAttribute("target", "_blank");
@@ -253,7 +275,7 @@ function buildCard(idName, photo, linkHref, title, subtitle, star, description, 
   textLink.setAttribute("target", "_blank");
   textLink.appendChild(divText);
 
-  var star = createSpan(star + " fa-star star_body checked pr-1");
+  var star = createSpan("far fa-star star_body checked pr-1");
   var starLink = document.createElement("a");
   starLink.href = "#";
   starLink.setAttribute("onclick",  'starClick("'+idName+'")');
