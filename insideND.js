@@ -45,6 +45,19 @@ function goToAcademics(anchor) {
     $("#academics").addClass('selectedTab');
 }
 
+function goToAdministrative(anchor) {
+    $("#body").load("administrative-body.html", function () {
+        location.href = anchor;
+        $("[data-toggle=popover]").popover();
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        });
+    });
+    $("#navigation > .subsection").remove();
+    $("#navigation").append('<span class="subsection"> Administrative</span>');
+    $("#academics").addClass('selectedTab');
+}
+
 function goToSearch() {
     $("#body").load("search-body.html", function () {
         $("[data-toggle=popover]").popover();
