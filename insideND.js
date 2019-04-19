@@ -336,8 +336,7 @@ function buildCard(idName, photo, linkHref, title, subtitle, description, single
   textLink.appendChild(divText);
 
   var star = createSpan("far fa-star star_body checked pr-1");
-  var starLink = document.createElement("a");
-  starLink.href = "#";
+  var starLink = document.createElement("a");s
   starLink.setAttribute("onclick",  'starClick("'+idName+'")');
   starLink.appendChild(star);
 
