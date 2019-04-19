@@ -13,7 +13,12 @@ $(document).ready(function () {
     });
     $("#body").load("index-body.html", function () {
         checkFavorites();
-	$("[data-toggle=popover]").popover();
+	$("[data-toggle=popover]").popover({
+		delay: {
+       	show: "500",
+       	hide: "100"
+    	}
+	});
         $('.popover-dismiss').popover({
             trigger: 'focus'
         });
@@ -54,8 +59,13 @@ function checkFavorites(){
 function goToAcademics(anchor) {
     $("#body").load("academics-body.html", function () {
         checkFavorites();
-	location.href = anchor;
-        $("[data-toggle=popover]").popover();
+		location.href = anchor;
+		$("[data-toggle=popover]").popover({
+			delay: {
+			show: "500",
+			hide: "100"
+			}
+		});
         $('.popover-dismiss').popover({
             trigger: 'focus'
         });
@@ -68,7 +78,12 @@ function goToAcademics(anchor) {
 function goToAdministrative(anchor) {
     $("#body").load("administrative-body.html", function () {
         location.href = anchor;
-        $("[data-toggle=popover]").popover();
+		$("[data-toggle=popover]").popover({
+			delay: {
+	       	show: "500",
+	       	hide: "100"
+	    	}
+		});
         $('.popover-dismiss').popover({
             trigger: 'focus'
         });
@@ -81,7 +96,12 @@ function goToAdministrative(anchor) {
 function goToSearch() {
     $("#body").load("search-body.html", function () {
 	checkFavorites();
-        $("[data-toggle=popover]").popover();
+		$("[data-toggle=popover]").popover({
+			delay: {
+			show: "500",
+			hide: "100"
+			}
+		});
         $('.popover-dismiss').popover({
             trigger: 'focus'
         });
@@ -95,7 +115,12 @@ function goToHome() {
     $("#body").load("index-body.html", function () {
 	checkFavorites();
         location.href = '#';
-        $("[data-toggle=popover]").popover();
+		$("[data-toggle=popover]").popover({
+			delay: {
+	       	show: "500",
+	       	hide: "100"
+	    	}
+		});
         $('.popover-dismiss').popover({
             trigger: 'focus'
         });
@@ -106,8 +131,13 @@ function goToHome() {
 
 function goToStudentLife() {
     $("#body").load("studentLife-body.html", function () {
-	checkFavorites();
-        $("[data-toggle=popover]").popover();
+		checkFavorites();
+		$("[data-toggle=popover]").popover({
+			delay: {
+			show: "500",
+			hide: "100"
+			}
+		});
         $('.popover-dismiss').popover({
             trigger: 'focus'
         });
@@ -273,14 +303,13 @@ function createSpan(classSpan){
   return span;
 }
 
-function createButtonDescript(description){
-  var button = document.createElement("button");
-  button.type = "button";
-  button.className = "btn btn-secondary descriptionBtn p-0";
-  button.setAttribute("data-toggle", "popover");
-  button.setAttribute("data-trigger","hover focus");
-  button.setAttribute("data-content", description);
-  return button;
+function createDivPopover(description){
+  var divP = document.createElement("div");
+  divP.setAttribute("data-toggle", "popover");
+  divP.setAttribute("data-trigger","hover");
+  divP.setAttribute("data-content", description);
+  divP.setAttribute("data-placement", "bottom");
+  return divP;
 }
 
 function buildCard(idName, photo, linkHref, title, subtitle, description, single = false){
@@ -293,8 +322,7 @@ function buildCard(idName, photo, linkHref, title, subtitle, description, single
 
   var titleP = createP("title", title);
   var subtitleP = createP("description", subtitle);
-  // var divText = createDiv("col pr-2");
-  var divText = createDiv("pr-2");
+  var divText = createDiv("col pr-2");
   divText.appendChild(titleP);
   divText.appendChild(subtitleP);
   var textLink = createLink("cardLink col", linkHref);
@@ -313,19 +341,23 @@ function buildCard(idName, photo, linkHref, title, subtitle, description, single
   border.appendChild(textLink);
   border.appendChild(starLink);
 
-  var colDiv = createDiv("col pr-0");
-  colDiv.appendChild(border);
+  var divPop = createDivPopover(description);
+  divPop.appendChild(border);
 
-  var arrow = createSpan("fa fa-2x fa-angle-right");
-  var descript = createButtonDescript(description);
-  descript.appendChild(arrow);
+  var colDiv = createDiv("col");
+  colDiv.appendChild(divPop);
 
-  var btnDiv = createDiv("col-auto tabBTN pl-0");
-  btnDiv.appendChild(descript);
+  // var arrow = createSpan("fa fa-2x fa-angle-right");
+  // var descript = createButtonDescript(description);
+  // descript.appendChild(arrow);
+  //
+  // var btnDiv = createDiv("col-auto tabBTN pl-0");
+  // btnDiv.appendChild(descript);
+
 
   var outerRowDiv = createDiv("row");
   outerRowDiv.appendChild(colDiv);
-  outerRowDiv.appendChild(btnDiv);
+  // outerRowDiv.appendChild(btnDiv);
   if(single){
     var scriptTag = document.getElementsByTagName('script');
     scriptTag = scriptTag[scriptTag.length - 1];
