@@ -73,6 +73,9 @@ function goToAcademics(anchor) {
     $("#navigation > .subsection").remove();
     $("#navigation").append('<span class="subsection"> Academics</span>');
     $("#academics").addClass('selectedTab');
+	$("#studentLife").removeClass("selectedTab");
+    $("#administrative").removeClass('selectedTab');
+
 }
 
 function goToAdministrative(anchor) {
@@ -336,7 +339,7 @@ function buildCard(idName, photo, linkHref, title, subtitle, description, single
   textLink.appendChild(divText);
 
   var star = createSpan("far fa-star star_body checked pr-1");
-  var starLink = document.createElement("a");s
+  var starLink = document.createElement("a");
   starLink.setAttribute("onclick",  'starClick("'+idName+'")');
   starLink.appendChild(star);
 
