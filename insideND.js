@@ -107,14 +107,13 @@ function goToHome() {
 function goToStudentLife() {
     $("#body").load("studentLife-body.html", function () {
 	checkFavorites();
-        location.href = '#';
         $("[data-toggle=popover]").popover();
         $('.popover-dismiss').popover({
             trigger: 'focus'
         });
     });
     $("#navigation > .subsection").remove();
-	$("#navigation").append('<span class="subsection"> Student Life</span>');
+    $("#navigation").append('<span class="subsection"> Student Life</span>');
     $("#academics").removeClass('selectedTab');
 }
 
