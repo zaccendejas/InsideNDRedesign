@@ -90,7 +90,9 @@ function goToAdministrative(anchor) {
     });
     $("#navigation > .subsection").remove();
     $("#navigation").append('<span class="subsection"> Administrative</span>');
-    $("#academics").addClass('selectedTab');
+	$("#academics").removeClass("selectedTab");
+	$("#studentLife").removeClass("selectedTab");
+    $("#administrative").addClass('selectedTab');
 }
 
 function goToSearch() {
@@ -127,6 +129,8 @@ function goToHome() {
     });
     $("#navigation > .subsection").remove();
     $("#academics").removeClass('selectedTab');
+	$("#studentLife").removeClass('selectedTab');
+	$("#administrative").removeClass('selectedTab');
 }
 
 function goToStudentLife() {
@@ -145,6 +149,8 @@ function goToStudentLife() {
     $("#navigation > .subsection").remove();
     $("#navigation").append('<span class="subsection"> Student Life</span>');
     $("#academics").removeClass('selectedTab');
+	$("#studentLife").addClass('selectedTab');
+	$("#administrative").removeClass('selectedTab');
 }
 
 function unfavorite(card){
