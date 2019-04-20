@@ -99,21 +99,33 @@ function goToAdministrative(anchor) {
 }
 
 function goToSearch() {
-    $("#body").load("search-body.html", function () {
-	checkFavorites();
-		$("[data-toggle=popover]").popover({
-			delay: {
-			show: "500",
-			hide: "100"
-			}
-		});
-        $('.popover-dismiss').popover({
-            trigger: 'focus'
-        });
-    });
+	var search = document.getElementById("search").value.toLowerCase();
+	if (search.includes("dart") || search.includes("class") || search.includes("register") || search.includes("registration"))
+	{
+		$("#body").load("dartSearch-body.html", function () {
+			var div = document.getElementById("DartResults");
+			var title = document.createElement("p");
+			title.className = "subsection border-bottom";
+			title.innerHTML = 'Showing results for "' + document.getElementById("search").value + '"';
+			div.insertBefore(title, div.firstChild);
+			checkFavorites();
+			$("[data-toggle=popover]").popover({
+				delay: {
+				show: "500",
+				hide: "100"
+				}
+			});
+	        $('.popover-dismiss').popover({
+	            trigger: 'focus'
+	        });
+	    });
+	}
+
     $("#navigation > .subsection").remove();
-    $("#navigation").append('<span class="subsection"> "job"</span>');
+    $("#navigation").append('<span class="subsection"> "' + document.getElementById("search").value+'"</span>');
     $("#academics").removeClass('selectedTab');
+	$("#studentLife").removeClass('selectedTab');
+	$("#administrative").removeClass('selectedTab');
 }
 
 function goToHome() {
