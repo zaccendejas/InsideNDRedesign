@@ -158,6 +158,11 @@
     vertical-align: middle;
 }
 
+#emptyFavMessage {
+    padding: 13px;
+    font-size: 18px;
+}
+
 #deletedList {
     list-style: none;
     margin: 0;
