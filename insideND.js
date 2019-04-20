@@ -252,7 +252,7 @@ function addFavorite(card){
   	else if (name.innerHTML == "Submit Course and Instructor Evaluation"){
     	name.innerHTML = "Submit CIFs";
   	}
-	else if(name.innerHTML = "Add Domer Dollars"){
+	else if(name.innerHTML == "Add Domer Dollars"){
 		name.innerHTML = "Domer Dollars";
 	}
 
