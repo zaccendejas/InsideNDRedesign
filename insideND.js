@@ -250,9 +250,12 @@ function addFavorite(card){
 	else if (name.innerHTML == "Graduation Progress System"){
 		name.innerHTML ="GPS";
 	}
-  else if (name.innerHTML == "Submit Course and Instructor Evaluation"){
-    name.innerHTML = "Submit CIFs";
-  }
+  	else if (name.innerHTML == "Submit Course and Instructor Evaluation"){
+    	name.innerHTML = "Submit CIFs";
+  	}
+	else if(name.innerHTML = "Add Domer Dollars"){
+		name.innerHTML = "Domer Dollars";
+	}
 
 	var favli= document.createElement("li");
 	favli.className = "favli";
@@ -271,8 +274,8 @@ function addFavorite(card){
 
 	var starButton = document.createElement("button");
 	starButton.className="starButton";
-  starButton.id = card.id+"Button";
-  starButton.setAttribute("onclick", "clickedStarFav(this)");
+  	starButton.id = card.id+"Button";
+  	starButton.setAttribute("onclick", "clickedStarFav(this)");
 	starButton.appendChild(star);
 
 	var liStar = document.createElement("span");
