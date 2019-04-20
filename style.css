@@ -127,7 +127,9 @@
     padding-top: 2px;
     text-decoration: none;
 }
-
+#searchBtn{
+	padding-top:2px;
+}
 #logoTxt {
     color: white;
     text-decoration: none;

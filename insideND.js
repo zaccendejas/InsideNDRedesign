@@ -120,9 +120,32 @@ function goToSearch() {
 	        });
 	    });
 	}
+	if (search.includes("care") || search.includes("consultant") || search.includes("consultation") )
+	{
+		$("#body").load("careSearch-body.html", function () {
+			var div = document.getElementById("care");
+			var title = document.createElement("p");
+			title.className = "subsection border-bottom";
+			title.innerHTML = 'Showing results for "' + document.getElementById("search").value + '"';
+			div.insertBefore(title, div.firstChild);
+			checkFavorites();
+			$("[data-toggle=popover]").popover({
+				delay: {
+				show: "500",
+				hide: "100"
+				}
+			});
+	        $('.popover-dismiss').popover({
+	            trigger: 'focus'
+	        });
+	    });
+	}
 
     $("#navigation > .subsection").remove();
-    $("#navigation").append('<span class="subsection"> "' + document.getElementById("search").value+'"</span>');
+	console.log(document.getElementById("search").value);
+	if (document.getElementById("search").value != ""){
+    	$("#navigation").append('<span class="subsection"> "' + document.getElementById("search").value+'"</span>');
+	}
     $("#academics").removeClass('selectedTab');
 	$("#studentLife").removeClass('selectedTab');
 	$("#administrative").removeClass('selectedTab');
