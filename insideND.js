@@ -145,7 +145,82 @@ function goToSearch() {
             });
         });
     }
-
+	if (search.includes("domer") || search.includes("dollar")) {
+        $("#body").load("domerDollarsSearch-body.html", function () {
+            var div = document.getElementById("domerDollarsSearch");
+            var title = document.createElement("p");
+            title.className = "subsection border-bottom";
+            title.innerHTML = 'Showing results for "' + document.getElementById("search").value + '"';
+            div.insertBefore(title, div.firstChild);
+            checkFavorites();
+            $("[data-toggle=popover]").popover({
+                delay: {
+                    show: "500",
+                    hide: "100"
+                }
+            });
+            $('.popover-dismiss').popover({
+                trigger: 'focus'
+            });
+        });
+    }
+	if (search.includes("irish") || search.includes("pay") || search.includes("tuition")) {
+        $("#body").load("irishpaySearch-body.html", function () {
+            var div = document.getElementById("irishPaySearch");
+            var title = document.createElement("p");
+            title.className = "subsection border-bottom";
+            title.innerHTML = 'Showing results for "' + document.getElementById("search").value + '"';
+            div.insertBefore(title, div.firstChild);
+            checkFavorites();
+            $("[data-toggle=popover]").popover({
+                delay: {
+                    show: "500",
+                    hide: "100"
+                }
+            });
+            $('.popover-dismiss').popover({
+                trigger: 'focus'
+            });
+        });
+    }
+	if (search.includes("change") || search.includes("password") || search.includes("net") || search.includes("id")) {
+		$("#body").load("changePasswordSearch-body.html", function () {
+			var div = document.getElementById("changePassSearch");
+			var title = document.createElement("p");
+			title.className = "subsection border-bottom";
+			title.innerHTML = 'Showing results for "' + document.getElementById("search").value + '"';
+			div.insertBefore(title, div.firstChild);
+			checkFavorites();
+			$("[data-toggle=popover]").popover({
+				delay: {
+					show: "500",
+					hide: "100"
+				}
+			});
+			$('.popover-dismiss').popover({
+				trigger: 'focus'
+			});
+		});
+	}
+	if (search.includes("credit") || search.includes("card") || search.includes("train") || search.includes("ccsp")) {
+		$("#body").load("ccspTrainingSearch-body.html", function () {
+			var div = document.getElementById("ccspSearch");
+			var title = document.createElement("p");
+			title.className = "subsection border-bottom";
+			title.innerHTML = 'Showing results for "' + document.getElementById("search").value + '"';
+			div.insertBefore(title, div.firstChild);
+			checkFavorites();
+			$("[data-toggle=popover]").popover({
+				delay: {
+					show: "500",
+					hide: "100"
+				}
+			});
+			$('.popover-dismiss').popover({
+				trigger: 'focus'
+			});
+		});
+	}
     if (document.getElementById("search").value != "") {
         $("#navigation > .subsection").remove();
         $("#navigation").append('<span class="subsection"> "' + document.getElementById("search").value + '"</span>');
@@ -292,7 +367,9 @@ function addFavorite(card) {
         name.innerHTML = "CIFs";
     } else if (name.innerHTML == "Add Domer Dollars") {
         name.innerHTML = "Domer Dollars";
-    }
+    } else if(name.innerHTML == "Change Your Password"){
+		name.innerHTML = "Change Pwd";
+	}
 
     var favli = document.createElement("li");
     favli.className = "favli";
