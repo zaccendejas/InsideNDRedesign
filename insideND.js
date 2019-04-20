@@ -141,9 +141,8 @@ function goToSearch() {
 	    });
 	}
 
-    $("#navigation > .subsection").remove();
-	console.log(document.getElementById("search").value);
 	if (document.getElementById("search").value != ""){
+		$("#navigation > .subsection").remove();
     	$("#navigation").append('<span class="subsection"> "' + document.getElementById("search").value+'"</span>');
 	}
     $("#academics").removeClass('selectedTab');
@@ -369,7 +368,7 @@ function buildCard(idName, photo, linkHref, title, subtitle, description, single
 
   var titleP = createP("title", title);
   var subtitleP = createP("description", subtitle);
-  var divText = createDiv("col pr-2");
+  var divText = createDiv("col pr-2 pl-0");
   divText.appendChild(titleP);
   divText.appendChild(subtitleP);
   var textLink = createLink("cardLink col", linkHref);
@@ -378,6 +377,7 @@ function buildCard(idName, photo, linkHref, title, subtitle, description, single
 
   var star = createSpan("far fa-star star_body checked pr-1");
   var starLink = document.createElement("a");
+  starLink.className = "starLink";
   starLink.setAttribute("onclick",  'starClick("'+idName+'")');
   starLink.appendChild(star);
 

@@ -208,15 +208,6 @@
     color: #D39F10;
 }
 
-.star {
-    /*
-    float: right;
-    margin-right: 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-*/
-}
-
 .starButton {
     background-color: inherit;
     border: none;
@@ -299,6 +290,7 @@ body {
 .bodyImg {
     margin: 0px;
     padding: 0px;
+	height: 91px;
 }
 
 .title {
