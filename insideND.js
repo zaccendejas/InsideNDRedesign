@@ -74,6 +74,7 @@ function goToAcademics(anchor) {
     $("#navigation").append('<span class="subsection"> Academics</span>');
     $("#academics").addClass('selectedTab');
 	$("#studentLife").removeClass("selectedTab");
+	$("#finances").removeClass("selectedTab");
     $("#administrative").removeClass('selectedTab');
 
 }
@@ -95,6 +96,7 @@ function goToAdministrative(anchor) {
     $("#navigation").append('<span class="subsection"> Administrative</span>');
 	$("#academics").removeClass("selectedTab");
 	$("#studentLife").removeClass("selectedTab");
+	$("#finances").removeClass("selectedTab");
     $("#administrative").addClass('selectedTab');
 }
 
@@ -147,6 +149,7 @@ function goToSearch() {
 	}
     $("#academics").removeClass('selectedTab');
 	$("#studentLife").removeClass('selectedTab');
+	$("#finances").removeClass("selectedTab");
 	$("#administrative").removeClass('selectedTab');
 }
 
@@ -167,6 +170,7 @@ function goToHome() {
     $("#navigation > .subsection").remove();
     $("#academics").removeClass('selectedTab');
 	$("#studentLife").removeClass('selectedTab');
+	$("#finances").removeClass("selectedTab");
 	$("#administrative").removeClass('selectedTab');
 }
 
@@ -187,7 +191,31 @@ function goToStudentLife() {
     $("#navigation").append('<span class="subsection"> Student Life</span>');
     $("#academics").removeClass('selectedTab');
 	$("#studentLife").addClass('selectedTab');
+	$("#finances").removeClass("selectedTab");
 	$("#administrative").removeClass('selectedTab');
+}
+
+function goToFinances(anchor) {
+    $("#body").load("finances-body.html", function () {
+        checkFavorites();
+		location.href = anchor;
+		$("[data-toggle=popover]").popover({
+			delay: {
+			show: "500",
+			hide: "100"
+			}
+		});
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        });
+    });
+    $("#navigation > .subsection").remove();
+    $("#navigation").append('<span class="subsection"> Finances</span>');
+    $("#academics").removeClass('selectedTab');
+	$("#studentLife").removeClass("selectedTab");
+	$("#finances").addClass("selectedTab");
+    $("#administrative").removeClass('selectedTab');
+
 }
 
 function unfavorite(card){
