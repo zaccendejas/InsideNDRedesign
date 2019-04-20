@@ -127,7 +127,9 @@
     padding-top: 2px;
     text-decoration: none;
 }
-
+#searchBtn{
+	padding-top:2px;
+}
 #logoTxt {
     color: white;
     text-decoration: none;
@@ -209,15 +211,6 @@
 
 .checked {
     color: #D39F10;
-}
-
-.star {
-    /*
-    float: right;
-    margin-right: 10px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-*/
 }
 
 .starButton {
@@ -302,6 +295,7 @@ body {
 .bodyImg {
     margin: 0px;
     padding: 0px;
+	height: 91px;
 }
 
 .title {
@@ -380,4 +374,9 @@ body {
     text-decoration: none !important;
     color: black !important;
     width: 65%;
+}
+
+button:focus,
+select:focus {
+  outline: none;
 }

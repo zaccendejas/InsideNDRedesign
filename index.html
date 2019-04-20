@@ -18,8 +18,8 @@
     <div id="banner">
         <!--        <img class="logo" src="images/logo.png" alt="InsideND">-->
         <div id="logo"><a id="logoTxt" href="#" onclick=goToHome();>InsideND</a></div>
-        <input type="text" placeholder="Search...">
-        <a onclick="goToSearch();"><button type="submit"><i class="fas fa-search"></i></button></a>
+        <input id="search" type="text" placeholder="Search...">
+        <a onclick="goToSearch();"><button type="submit" id="searchBtn"><i class="fas fa-search"></i></button></a>
         <!--        <a href="jobSearch.html"><button type="submit"><i class="fas fa-search"></i></button></a>-->
         <button id="signout" type="submit">Sign Out</button>
     </div>
@@ -51,10 +51,10 @@
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn"><i class="fas fa-money-bill-wave"></i> Finances</button>
+            <a onclick="goToFinances('#');"><button class="dropbtn" id="finances"><span class="fas fa-money-bill-wave"></span> Finances</button></a>
             <div class="dropdown-content">
                 <a href="#"><i class="fas fa-file-invoice-dollar"></i> Student Accounts</a>
-                <a href="#"><i class="fas fa-money-check-alt"></i> Campus Jobs</a>
+                <a href="#"><i class="fas fa-money-check-alt"></i> Campus Jobs & Work Study</a>
                 <a href="#"><i class="fas fa-hand-holding-usd"></i> Financial Aid</a>
             </div>
         </div>

@@ -79,6 +79,7 @@ function goToAcademics(anchor) {
     $("#navigation").append('<span class="subsection"> Academics</span>');
     $("#academics").addClass('selectedTab');
     $("#studentLife").removeClass("selectedTab");
+    $("#finances").removeClass("selectedTab");
     $("#administrative").removeClass('selectedTab');
 
 }
@@ -100,25 +101,59 @@ function goToAdministrative(anchor) {
     $("#navigation").append('<span class="subsection"> Administrative</span>');
     $("#academics").removeClass("selectedTab");
     $("#studentLife").removeClass("selectedTab");
+    $("#finances").removeClass("selectedTab");
     $("#administrative").addClass('selectedTab');
 }
 
 function goToSearch() {
-    $("#body").load("search-body.html", function () {
-        checkFavorites();
-        $("[data-toggle=popover]").popover({
-            delay: {
-                show: "500",
-                hide: "100"
-            }
+    var search = document.getElementById("search").value.toLowerCase();
+    if (search.includes("dart") || search.includes("class") || search.includes("register") || search.includes("registration")) {
+        $("#body").load("dartSearch-body.html", function () {
+            var div = document.getElementById("DartResults");
+            var title = document.createElement("p");
+            title.className = "subsection border-bottom";
+            title.innerHTML = 'Showing results for "' + document.getElementById("search").value + '"';
+            div.insertBefore(title, div.firstChild);
+            checkFavorites();
+            $("[data-toggle=popover]").popover({
+                delay: {
+                    show: "500",
+                    hide: "100"
+                }
+            });
+            $('.popover-dismiss').popover({
+                trigger: 'focus'
+            });
         });
-        $('.popover-dismiss').popover({
-            trigger: 'focus'
+    }
+    if (search.includes("care") || search.includes("consultant") || search.includes("consultation")) {
+        $("#body").load("careSearch-body.html", function () {
+            var div = document.getElementById("care");
+            var title = document.createElement("p");
+            title.className = "subsection border-bottom";
+            title.innerHTML = 'Showing results for "' + document.getElementById("search").value + '"';
+            div.insertBefore(title, div.firstChild);
+            checkFavorites();
+            $("[data-toggle=popover]").popover({
+                delay: {
+                    show: "500",
+                    hide: "100"
+                }
+            });
+            $('.popover-dismiss').popover({
+                trigger: 'focus'
+            });
         });
-    });
-    $("#navigation > .subsection").remove();
-    $("#navigation").append('<span class="subsection"> "job"</span>');
+    }
+
+    if (document.getElementById("search").value != "") {
+        $("#navigation > .subsection").remove();
+        $("#navigation").append('<span class="subsection"> "' + document.getElementById("search").value + '"</span>');
+    }
     $("#academics").removeClass('selectedTab');
+    $("#studentLife").removeClass('selectedTab');
+    $("#finances").removeClass("selectedTab");
+    $("#administrative").removeClass('selectedTab');
 }
 
 function goToHome() {
@@ -138,6 +173,7 @@ function goToHome() {
     $("#navigation > .subsection").remove();
     $("#academics").removeClass('selectedTab');
     $("#studentLife").removeClass('selectedTab');
+    $("#finances").removeClass("selectedTab");
     $("#administrative").removeClass('selectedTab');
 }
 
@@ -158,19 +194,48 @@ function goToStudentLife() {
     $("#navigation").append('<span class="subsection"> Student Life</span>');
     $("#academics").removeClass('selectedTab');
     $("#studentLife").addClass('selectedTab');
+    $("#finances").removeClass("selectedTab");
     $("#administrative").removeClass('selectedTab');
+}
+
+function goToFinances(anchor) {
+    $("#body").load("finances-body.html", function () {
+        checkFavorites();
+        location.href = anchor;
+        $("[data-toggle=popover]").popover({
+            delay: {
+                show: "500",
+                hide: "100"
+            }
+        });
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        });
+    });
+    $("#navigation > .subsection").remove();
+    $("#navigation").append('<span class="subsection"> Finances</span>');
+    $("#academics").removeClass('selectedTab');
+    $("#studentLife").removeClass("selectedTab");
+    $("#finances").addClass("selectedTab");
+    $("#administrative").removeClass('selectedTab');
+
+}
+
+function checkEmptyFavorites() {
+    // check for empty favorites list
+    if ($("#currentFavs").has("li").length === 0) {
+        console.log('empty favorites');
+        $("#emptyFavMessage").show();
+    }
 }
 
 function unfavorite(card) {
     var cardBody = document.getElementById(card.id.substring(0, card.id.length - 3));
-    // unfavorite the card
     if (cardBody != null) {
         var star = cardBody.children[2].children[0];
         star.classList.remove("fa");
         star.classList.add("far");
     }
-
-    // replace or add to deleted favorites
     if ($("#deletedList").children().length) {
         console.log('replace');
         $(card).fadeOut("slow", function () {
@@ -178,11 +243,7 @@ function unfavorite(card) {
             $("#deletedList > .favCard").replaceWith(card);
             $(card).find('.starButton span').removeClass('fa').addClass('far');
             $(card).fadeIn("slow");
-            // check for empty favorites list
-            if ($("#currentFavs").has("li").length === 0) {
-                console.log('empty favorites');
-                $("#emptyFavMessage").show();
-            }
+            checkEmptyFavorites();
         });
     } else {
         console.log('deleted is empty');
@@ -190,11 +251,7 @@ function unfavorite(card) {
             $("#deletedList").append(card);
             $(card).find('.starButton span').removeClass('fa').addClass('far');
             $(card).fadeIn("slow");
-            // check for empty favorites list
-            if ($("#currentFavs").has("li").length === 0) {
-                console.log('empty favorites');
-                $("#emptyFavMessage").show();
-            }
+            checkEmptyFavorites();
         })
     }
 }
@@ -233,6 +290,8 @@ function addFavorite(card) {
         name.innerHTML = "GPS";
     } else if (name.innerHTML == "Course and Instructor Evaluation") {
         name.innerHTML = "CIFs";
+    } else if (name.innerHTML == "Add Domer Dollars") {
+        name.innerHTML = "Domer Dollars";
     }
 
     var favli = document.createElement("li");
@@ -268,8 +327,6 @@ function addFavorite(card) {
     fav.appendChild(liStar);
 
     favorite(fav);
-
-
 }
 
 function starClick(id) {
@@ -345,7 +402,7 @@ function buildCard(idName, photo, linkHref, title, subtitle, description, single
 
     var titleP = createP("title", title);
     var subtitleP = createP("description", subtitle);
-    var divText = createDiv("col pr-2");
+    var divText = createDiv("col pr-2 pl-0");
     divText.appendChild(titleP);
     divText.appendChild(subtitleP);
     var textLink = createLink("cardLink col", linkHref);
@@ -354,6 +411,7 @@ function buildCard(idName, photo, linkHref, title, subtitle, description, single
 
     var star = createSpan("far fa-star star_body checked pr-1");
     var starLink = document.createElement("a");
+    starLink.className = "starLink";
     starLink.setAttribute("onclick", 'starClick("' + idName + '")');
     starLink.appendChild(star);
 
