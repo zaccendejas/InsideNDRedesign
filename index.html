@@ -28,17 +28,18 @@
             <a onclick="goToAcademics('#');"><button class="dropbtn" id="academics"><span class="fas fa-apple-alt"></span> Academics</button></a>
             <!--            <a href="category.html"><button class="dropbtn"><span class="fas fa-book"></span> Academics</button></a>-->
             <div class="dropdown-content">
-                <a href="#"><i class="fas fa-chalkboard-teacher"></i> Courses</a>
-                <a href="#FirstYear"><i class="fas fa-book"></i> Grades</a>
-                <a onclick="goToAcademics('#Library');" id="LibraryTab"><i class="fas fa-graduation-cap"></i> Career</a>
+                <a href="#" onclick="goToAcademics('#Courses')"><i class="fas fa-chalkboard-teacher"></i> Courses</a>
+                <a href="#" onclick="goToAcademics('#Grades')"><i class="fas fa-book"></i> Grades</a>
+                <a href="#" onclick="goToAcademics('#Career');"><i class="fas fa-graduation-cap"></i> Career</a>
             </div>
         </div>
         <div class="dropdown">
             <a onclick="goToStudentLife('#');"><button class="dropbtn" id="studentLife"><span class="fas fa-seedling"></span> Student Life</button></a>
             <div class="dropdown-content">
-                <a href="#"><i class="fas fa-users"></i> Clubs and Activities</a>
-                <a href="#"><i class="fas fa-spa"></i> Wellness</a>
-                <a href="#"><i class="fas fa-church"></i> Spirituality</a>
+                <a href="#" onclick="goToStudentLife('#Clubs');"><i class="fas fa-users"></i> Clubs and Activities</a>
+                <a href="#" onclick="goToStudentLife('#Wellness');"><i class="fas fa-spa"></i> Wellness</a>
+                <a href="#" onclick="goToStudentLife('#Spirituality');"><i class="fas fa-church"></i> Spirituality</a>
+				<a href="#" onclick="goToStudentLife('#Services');"><i class="fas fa-mail-bulk"></i> Student Services</a>
             </div>
         </div>
         <div class="dropdown">
@@ -53,9 +54,9 @@
         <div class="dropdown">
             <a onclick="goToFinances('#');"><button class="dropbtn" id="finances"><span class="fas fa-money-bill-wave"></span> Finances</button></a>
             <div class="dropdown-content">
-                <a href="#"><i class="fas fa-file-invoice-dollar"></i> Student Accounts</a>
-                <a href="#"><i class="fas fa-money-check-alt"></i> Campus Jobs & Work Study</a>
-                <a href="#"><i class="fas fa-hand-holding-usd"></i> Financial Aid</a>
+                <a href="#" onclick="goToFinances('#accounts');"><i class="fas fa-file-invoice-dollar"></i> Student Accounts</a>
+                <a href="#" onclick="goToFinances('#jobs');"><i class="fas fa-money-check-alt"></i> Campus Jobs & Work Study</a>
+                <a href="#" onclick="goToFinances('#aid');"><i class="fas fa-hand-holding-usd"></i> Financial Aid</a>
             </div>
         </div>
         <div class="dropdown">

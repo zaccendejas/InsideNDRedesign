@@ -380,3 +380,12 @@ button:focus,
 select:focus {
   outline: none;
 }
+:target:before {
+content:"";
+display:block;
+height:200px; /* fixed header height*/
+margin:-200px 0 0; /* negative fixed header height */
+}
+#body{
+	margin-bottom: 500px;
+}

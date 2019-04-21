@@ -252,9 +252,10 @@ function goToHome() {
     $("#administrative").removeClass('selectedTab');
 }
 
-function goToStudentLife() {
+function goToStudentLife(anchor) {
     $("#body").load("studentLife-body.html", function () {
         checkFavorites();
+		location.href = anchor;
         $("[data-toggle=popover]").popover({
             delay: {
                 show: "500",
