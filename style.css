@@ -129,7 +129,10 @@
 }
 #searchBtn{
 	padding-top:2px;
+    cursor: pointer;
 }
+
+
 #logoTxt {
     color: white;
     text-decoration: none;
@@ -360,6 +363,7 @@ body {
 
 #signout {
     margin-left: 200px;
+    cursor: pointer;
 }
 
 .selectedTab {

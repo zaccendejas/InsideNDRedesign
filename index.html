@@ -43,12 +43,12 @@
             </div>
         </div>
         <div class="dropdown">
-            <button class="dropbtn"><i class="fas fa-city"></i> Around Campus</button>
+            <a onclick="goToAroundCampus('#');"><button class="dropbtn" id="aroundCampus"><span class="fas fa-city"></span> Around Campus</button></a>
             <div class="dropdown-content">
-                <a href="#"><i class="fas fa-newspaper"></i> News</a>
-                <a href="#"><i class="fas fa-building"></i> Facilities</a>
-                <a href="#"><i class="fas fa-utensils"></i> Campus Dining</a>
-                <a href="#"><i class="fas fa-car"></i> Transportation</a>
+                <a href="#" onclick="goToAroundCampus('#News');"><i class="fas fa-newspaper"></i> News</a>
+                <a href="#" onclick="goToAroundCampus('#Facilities');"><i class="fas fa-building"></i> Facilities</a>
+                <a href="#" onclick="goToAroundCampus('#CampusDining');"><i class="fas fa-utensils"></i> Campus Dining</a>
+                <a href="#" onclick="goToAroundCampus('#Transportation');"><i class="fas fa-car"></i> Transportation</a>
             </div>
         </div>
         <div class="dropdown">
@@ -61,11 +61,10 @@
         </div>
         <div class="dropdown">
             <a onclick="goToAdministrative('#');"><button class="dropbtn" id="administrative"><span class="fas fa-clipboard-check"></span> Administrative</button></a>
-            <!--  <button class="dropbtn"><i class="fas fa-clipboard-check"></i> Administrative</button> -->
             <div class="dropdown-content">
-                <a href="#"><i class="fas fa-desktop"></i> OIT</a>
-                <a href="#"><i class="fas fa-money-check-alt"></i> Campus Safety</a>
-                <a href="#"><i class="fas fa-balance-scale"></i> Policies</a>
+                <a href="#" onclick="goToAdministrative('#OIT');"><i class="fas fa-desktop"></i> OIT</a>
+                <a href="#" onclick="goToAdministrative('#NDPD');"><i class="fas fa-money-check-alt"></i> Campus Safety</a>
+                <a href="#" onclick="goToAdministrative('#Policies');"><i class="fas fa-balance-scale"></i> Policies</a>
             </div>
         </div>
     </div>

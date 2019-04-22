@@ -81,7 +81,7 @@ function goToAcademics(anchor) {
     $("#studentLife").removeClass("selectedTab");
     $("#finances").removeClass("selectedTab");
     $("#administrative").removeClass('selectedTab');
-
+    $("#aroundCampus").removeClass('selectedTab');
 }
 
 function goToAdministrative(anchor) {
@@ -103,6 +103,7 @@ function goToAdministrative(anchor) {
     $("#studentLife").removeClass("selectedTab");
     $("#finances").removeClass("selectedTab");
     $("#administrative").addClass('selectedTab');
+    $("#aroundCampus").removeClass('selectedTab');
 }
 
 function goToSearch() {
@@ -229,6 +230,8 @@ function goToSearch() {
     $("#studentLife").removeClass('selectedTab');
     $("#finances").removeClass("selectedTab");
     $("#administrative").removeClass('selectedTab');
+    $("#aroundCampus").removeClass('selectedTab');
+
 }
 
 function goToHome() {
@@ -250,6 +253,8 @@ function goToHome() {
     $("#studentLife").removeClass('selectedTab');
     $("#finances").removeClass("selectedTab");
     $("#administrative").removeClass('selectedTab');
+    $("#aroundCampus").removeClass('selectedTab');
+
 }
 
 function goToStudentLife(anchor) {
@@ -272,6 +277,7 @@ function goToStudentLife(anchor) {
     $("#studentLife").addClass('selectedTab');
     $("#finances").removeClass("selectedTab");
     $("#administrative").removeClass('selectedTab');
+    $("#aroundCampus").removeClass('selectedTab');
 }
 
 function goToFinances(anchor) {
@@ -294,7 +300,30 @@ function goToFinances(anchor) {
     $("#studentLife").removeClass("selectedTab");
     $("#finances").addClass("selectedTab");
     $("#administrative").removeClass('selectedTab');
+    $("#aroundCampus").removeClass('selectedTab');
+}
 
+function goToAroundCampus(anchor) {
+    $("#body").load("aroundCampus-body.html", function () {
+        checkFavorites();
+        location.href = anchor;
+        $("[data-toggle=popover]").popover({
+            delay: {
+                show: "500",
+                hide: "100"
+            }
+        });
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        });
+    });
+    $("#navigation > .subsection").remove();
+    $("#navigation").append('<span class="subsection"> Finances</span>');
+    $("#academics").removeClass('selectedTab');
+    $("#studentLife").removeClass("selectedTab");
+    $("#finances").removeClass("selectedTab");
+    $("#administrative").removeClass('selectedTab');
+    $("#aroundCampus").addClass("selectedTab");
 }
 
 function checkEmptyFavorites() {
