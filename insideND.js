@@ -318,7 +318,7 @@ function goToAroundCampus(anchor) {
         });
     });
     $("#navigation > .subsection").remove();
-    $("#navigation").append('<span class="subsection"> Finances</span>');
+    $("#navigation").append('<span class="subsection"> Around Campus</span>');
     $("#academics").removeClass('selectedTab');
     $("#studentLife").removeClass("selectedTab");
     $("#finances").removeClass("selectedTab");
